@@ -1,0 +1,267 @@
+mvn  package -Dmaven.test.skip=true assembly:assembly
+
+mysql -hlocalhost -P8066 -unet -pnet -Dnet
+mysql -hlocalhost -P9066 -unet -pnet -Dnet
+
+
+mysql -h133.37.31.55 -utest -ptest -P8066 -Ddbtest
+ 
+ mysql -hlocalhost -P8066 -unet -pnet -Ddbtest
+
+ mysql -h133.37.31.51 -unet -pnet -P8066 -Dnet
+ mysql -h133.37.31.51 -unet -pnet -P9066 -Dnet
+
+指定节点执行:
+"/*!cobar:"
+
+ select * from information_schema.PROCESSLIST where info is not null;
+ 
+
+///////////////词法解析//////////////// max:100000 def:10000
+指定添加函数，合并结果，返回前面行数,防止记录太大，影响性能。
+
+hint 语法：
+HINT_PARSERS.put("table", new SimpleHintParser());
+HINT_PARSERS.put("replica", new SimpleHintParser());
+HINT_PARSERS.put("dataNodeId", new DataNodeHintParser());
+HINT_PARSERS.put("partitionOperand", new PartitionOperandHintParser());
+
+
+// index start from 1
+// /*!cobar: $dataNodeId=0.0, $table='offer'*/
+// /*!cobar: $dataNodeId=[0,1,5.2], $table='offer'*/
+// /*!cobar: $partitionOperand=('member_id'='m1'), $table='offer'*/
+// /*!cobar: $partitionOperand=('member_id'=['m1','m2']), $table='offer', $replica=2*/
+// /*!cobar: $partitionOperand=(['offer_id','group_id']=[123,'3c']), $table='offer'*/
+// /*!cobar: $partitionOperand=(['offer_id','group_id']=[[123,'3c'],[234,'food']]),$table='offer'*/
+
+        
+
+/*!cobar:$dataNodeId=0,1, $table='tb2'*/ select * from tb2 where id=1
+
+
+//分库查询合并，只能支持一级聚合
+// comjoin(1,10000) :指定count字段索引，默认为0，指定合并数据的数据量大小控制,默认为10000
+/*!comjoin(1,10000)*/ select  val,count(0) c from tb2 group by val;
+/*!comjoin()*/ select val,count(id) c,max(id) mx,sum(id) s,min(id)mi  ,avg(id) av from (select * from tb2 ) a group by a.val;
+/*!comjoin()*/ select max(val),sum(id) c,max(id) mx,sum(id) s,min(id)mi  ,avg(id) av from tb2  ;
+
+/*!comjoin() limit(1)*/ select  val,count(0) c from tb2 group by val order by val asc,c desc;
+/*!comjoin()*/ select count(0) from CDL_CDT_1X_PP_BASIC;
+
+/*!comjoin()*/ select count(0) from CDL_CDT_1X_PP_BASIC where imsi=460030367377455 ;
+
+/*!comjoin()*/ select * from (select val,count(id) c,max(id) mx,sum(id) s,min(id)mi  ,avg(id) av from (select * from tb2 ) a group by a.val union select val,count(id) c,max(id) mx,sum(id) s,min(id)mi  ,avg(id) av from (select * from tb2 ) a group by a.val)a ;
+
+/*!comjoin()*/ select count(0) from CDL_CDT_1X_PP_BASIC;
+
+/*!comjoin(1,10000)*/ SELECT MAX(val), COUNT(0), SUM(c), MAX(mx), SUM(s), MIN(mi), AVG(av) AS AV, SUM(av * c) / SUM(c) FROM (SELECT val, COUNT(id) AS C, MAX(id) AS MX, SUM(id) AS S, MIN(id) AS MI, AVG(id) AS AV FROM (SELECT * FROM tb2) AS A GROUP BY a.val) AS B
+unparse sql=SELECT MAX(val), COUNT(0), SUM(c), MAX(mx), SUM(s), MIN(mi), AVG(av) AS AV, SUM(av * c) / SUM(c) FROM (SELECT val, COUNT(id) AS C, MAX(id) AS MX, SUM(id) AS S, MIN(id) AS MI, AVG(id) AS AV FROM (SELECT * FROM tb2) AS A GROUP BY a.val) AS B
+
+/*!comjoin()*/  select C_BIGINT ,C_BINARY ,C_BIT ,C_BLOB ,C_BOOL ,C_BOOLEAN ,C_CHAR ,C_DATE,C_DATETIME ,C_DECIMAL ,C_DOUBLE ,C_ENUM 
+,C_FLOAT ,C_INT ,C_LONGBLOB ,C_LONGTEXT ,C_MEDIUMBLOB ,C_MEDIUMINT ,C_MEDIUMTEXT ,C_NUMERIC ,C_REAL ,C_SET ,C_SMALLINT ,C_TEXT ,C_TIME 
+,C_TIMESTAMP ,C_TINYBLOB ,C_TINYINT ,C_TINYTEXT ,C_VARBINARY ,C_VARCHAR ,C_YEAR ,count(0) C
+from C_TYPE group by C_BIGINT ,C_BINARY ,C_BIT ,C_BLOB ,C_BOOL ,C_BOOLEAN ,C_CHAR ,C_DATE,C_DATETIME ,C_DECIMAL ,C_DOUBLE 
+,C_ENUM ,C_FLOAT ,C_INT ,C_LONGBLOB ,C_LONGTEXT ,C_MEDIUMBLOB ,C_MEDIUMINT ,C_MEDIUMTEXT ,C_NUMERIC ,C_REAL ,C_SET ,C_SMALLINT ,C_TEXT 
+,C_TIME ,C_TIMESTAMP ,C_TINYBLOB ,C_TINYINT ,C_TINYTEXT ,C_VARBINARY ,C_VARCHAR ,C_YEAR ;
+
+/*!comjoin()*/  select C_BIGINT ,C_BINARY ,C_BIT ,C_BLOB ,C_BOOL ,C_BOOLEAN ,C_CHAR ,C_DATE,C_DATETIME ,C_DECIMAL ,C_DOUBLE ,C_ENUM ,C_FLOAT ,C_INT ,C_LONGBLOB ,C_LONGTEXT ,C_MEDIUMBLOB ,C_MEDIUMINT ,C_MEDIUMTEXT ,C_NUMERIC ,C_REAL ,C_SET ,C_SMALLINT ,C_TEXT ,C_TIME ,C_TIMESTAMP ,C_TINYBLOB ,C_TINYINT ,C_TINYTEXT ,C_VARBINARY ,C_VARCHAR ,C_YEAR ,count(0) C from C_TYPE group by C_BIGINT ,C_BINARY ,C_BIT ,C_BLOB ,C_BOOL ,C_BOOLEAN ,C_CHAR ,C_DATE,C_DATETIME ,C_DECIMAL ,C_DOUBLE ,C_ENUM ,C_FLOAT ,C_INT ,C_LONGBLOB ,C_LONGTEXT ,C_MEDIUMBLOB ,C_MEDIUMINT ,C_MEDIUMTEXT ,C_NUMERIC ,C_REAL ,C_SET ,C_SMALLINT ,C_TEXT ,C_TIME ,C_TIMESTAMP ,C_TINYBLOB ,C_TINYINT ,C_TINYTEXT ,C_VARBINARY ,C_VARCHAR ,C_YEAR ;
+
+
+
+FrontendConnection.    public void query(byte[] data) 
+ServerQueryHandler     public void query(String sql) 
+SelectHandler.handle     public static void handle(String stmt, ServerConnection c, int offs) 
+ServerConnection     public void execute(String sql, int type) 
+
+ServerRouter    public static RouteResultset route(SchemaConfig schema, String stmt, String charset, Object info)
+
+PartitionKeyVisitor     public void visit(DMLSelectStatement node) 
+RouteResultset 
+
+select max(val),count(0),sum(c),max(m),sum(s),min(m) from (
+select val,count(id) c,max(id) m,sum(id) s,min(id)m from (select * from tb2 ) a group by a.val) b
+
+
+ private void handleSuccessEOF(BlockingSession ss, BinaryPacket bin) {
+        if (decrementCountAndIsZero()) {//判断是否所有查询都完成处理
+        
+
+
+
+        
+        
+
+///////////////执行选择同步/////
+MultiNodeExecutor.execute(RouteResultsetNode[] nodes, final boolean autocommit, final BlockingSession ss, final int flag) {
+
+选择直接输出到buf还是缓存计算池
+    private void handleRowData(final RouteResultsetNode rrn, Channel c, BlockingSession ss) throws IOException {
+
+    private void handleSuccessEOF(BlockingSession ss, BinaryPacket bin) {
+
+
+///////////////缓存合并/////
+
+///////////////协议封装/////
+
+hadoop fs -put 4/qoe_sum_user__4_8152.txt          /group/mysql/CDL_CDT_1X_PP_BASIC/
+
+lsof -p $java_pid | wc -l 
+
+ nohup /hadoop/data12/test/exp.sh 3 9 10 11 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 3 12 13 14 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 3 15 16 17 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 3 18 19 20 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 3 21 22 23 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 3 24 25 26 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 3 27 28 29 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 3 30 31 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 4 1 2 3 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 4 4 5 6 > /hadoop/data12/test/exp.log & 
+ nohup /hadoop/data12/test/exp.sh 4 7 8 9 > /hadoop/data12/test/exp.log & 
+
+ 
+CREATE INDEX IF NOT EXISTS IDX_1X_PP_B_LNGLAT ON CDL_CDT_1X_PP_BASIC(LONGITUDE_LEFT_UP,LATITUDE_LEFT_UP);
+CREATE INDEX IF NOT EXISTS IDX_1X_PP_B_IMSI ON CDL_CDT_1X_PP_BASIC(IMSI) ;
+
+SELECT 
+  partition_name part,  
+  partition_expression expr,  
+  partition_description descr,  
+  t.SUBPARTITION_EXPRESSION, 
+  table_rows  
+FROM 
+  INFORMATION_SCHEMA.partitions  t
+WHERE 
+  TABLE_SCHEMA = SCHEMA()  
+  AND TABLE_NAME='CDL_CDT_1X_PP_BASIC'AND table_rows >1000; 
+  
+  
+SELECT * FROM information_schema.PROCESSLIST WHERE info IS NOT NULL;
+  
+100		System.out.println(LngLatUtil.getDistance(97.3661, 26.0661, 97.3671, 26.0661));
+100		System.out.println(LngLatUtil.getDistance(97.3661, 26.0661, 97.3661, 26.0670));
+11		System.out.println(LngLatUtil.getDistance(97.3661, 26.0661, 97.3661, 26.0662));
+10		System.out.println(LngLatUtil.getDistance(97.3661, 26.0661, 97.3662, 26.0661));
+15		System.out.println(LngLatUtil.getDistance(97.3661, 26.0661, 97.3662, 26.0662));  
+  
+经度:104.06326999999999
+纬度:30.66074
+
+select 104.063269+0.025,104.063269-0.025,30.66074+0.025,30.66074-0.025
+  
+  
+
+#############InfiniDB 安装##############
+
+### InfiniDB MySQL
+
+    wget -Omysql-4.6.2-1.tar.gz https://github.com/infinidb/mysql/archive/4.6.2-1.tar.gz
+    tar -zxf mysql-4.6.2-1.tar.gz
+    ln -s mysql-4.6.2-1 mysql
+    cd mysql
+    ./configure --prefix=/usr/local/Calpont/mysql
+    make
+    make install
+    
+### InfiniDB
+
+    cd ..
+    wget -Oinfinidb-4.6.2-1.tar.gz https://github.com/infinidb/infinidb/archive/4.6.2-1.tar.gz
+    tar -zxf infinidb-4.6.2-1.tar.gz
+    ln -s infinidb-4.6.2-1 infinidb
+    cd infinidb
+    ./configure --prefix=/usr/local/Calpont
+    make
+    make install
+  ######################配置###########
+  export INFINIDB_INSTALL_DIR=/app/mysql/infinidb
+  #vi ./bin/configxml.sh
+  #执行安装后配置，这一步是必须的。主要用于初始化InfiniDB数据库，以及将后台服务进程加入/etc/init.d/，令数据库随系统重启自动启动。
+  bin/postConfigure 
+  
+  
+  . /usr/local/Calpont/bin/calpontAlias
+  
+  grant all privileges on  *.* to 'mydb'@'%' with grant option; 
+create user 'mydb' identified by 'mydb';  
+grant all privileges on  *.* to 'mydb'@'%' with grant option; 
+grant all privileges on  *.* to 'mydb'@'localhost' with grant option;
+update mysql.user set password=password('mydb') where User="mydb"  ;
+
+GRANT REPLICATION SLAVE ON *.* TO 'backup'@'%' IDENTIFIED BY 'back';
+use infinidb_vtable;
+GRANT ALL ON  infinidb_vtable  TO 'backup'@'%' IDENTIFIED BY 'back';
+flush privileges;
+create database infdb  character set utf8;
+drop database if EXISTS netdb51;
+drop database if EXISTS netdb56;
+create database netdb51  character set utf8;
+create database netdb56  character set utf8;
+ 
+
+./colxml  mydb2 -j501 -t cdl_cdt_1x_pp_basi -r 100  -d , -x csv -l /hadoop/data12/test/3/qoe_sum_user__3_
+
+/usr/local/Calpont/bin/cpimport -j 501
+
+/usr/local/Calpont/bin/cpimport mydb2 cdl_cdt_1x_pp_basic qoe_sum_user__3_113.txt -b 1000 -r 10 -w 20 -s ,  -f /hadoop/data12/test/3/qoe_sum_user__3_114.txt,/hadoop/data12/test/3//qoe_sum_user__3_115.txt,/hadoop/data12/test/3
+                 
+/usr/local/Calpont/bin/cpimport mydb2 CDL_CDT_1X_PP_BASIC /hadoop/data12/test/3/qoe_sum_user__3_179.txt -b 1000 -r 10 -w 20 -s , 
+
+
+rm -rf   /usr/local/Calpont/data/*
+rm -rf   /hadoop/data1/mysql/*
+rm -rf   /hadoop/data1/infinidb/*
+rm -rf  /hadoop/data10/infinidb/*
+rm -rf  /hadoop/data11/infinidb/*
+rm -rf  /hadoop/data12/infinidb/*
+rm -rf   /hadoop/data2/infinidb/*
+rm -rf   /hadoop/data3/infinidb/*
+rm -rf   /hadoop/data4/infinidb/*
+rm -rf   /hadoop/data5/infinidb/*
+rm -rf   /hadoop/data6/infinidb/*
+rm -rf   /hadoop/data7/infinidb/*
+rm -rf   /hadoop/data8/infinidb/*
+rm -rf   /hadoop/data9/infinidb/*
+
+
+
+
+./bin/postConfigure <<!EOD
+1
+calpont-4
+1
+1-12
+y
+!EOD
+
+
+cc stopSystem y
+cc addDbroot 11
+cc assignDbrootPmConfig 2,3,4,5,6,7,8,9,10,11,12 pm1
+
+cc getModuleConfig
+cc getSystemConfig
+cc startSystem
+ 
+  show master status;
+ stop slave; 
+ CHANGE MASTER TO  MASTER_HOST='133.37.31.62', MASTER_USER='backup',  MASTER_PASSWORD='back',  MASTER_LOG_FILE='bin.000007', MASTER_LOG_POS=1694;
+ 
+ CHANGE MASTER TO MASTER_HOST='133.37.31.61', MASTER_USER='backup',  MASTER_PASSWORD='back',  MASTER_LOG_FILE='bin.000006', MASTER_LOG_POS=1694;
+
+ start slave;
+ 
+ show slave status\G;
+ 
+ wxdb02 <===> wxdb03
+ wxdb04 <===> wxdb05
+ wxdb07 <===> wxdb08
+ wxdb09 <===> wxdb10
+ wxdb11 <===> wxdb12
+ 
+  scp wxdb04:/usr/local/Calpont.tar.gz ./
+  scp wxdb05:/usr/local/Calpont.tar.gz ./
+ 
+ 

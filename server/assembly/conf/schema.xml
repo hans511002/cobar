@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - Copyright 1999-2012 Alibaba Group.
+ -  
+ - Licensed under the Apache License, Version 2.0 (the "License");
+ - you may not use this file except in compliance with the License.
+ - You may obtain a copy of the License at
+ -  
+ -      http://www.apache.org/licenses/LICENSE-2.0
+ -  
+ - Unless required by applicable law or agreed to in writing, software
+ - distributed under the License is distributed on an "AS IS" BASIS,
+ - WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ - See the License for the specific language governing permissions and
+ - limitations under the License.
+-->
+<!DOCTYPE cobar:schema SYSTEM "schema.dtd">
+<cobar:schema xmlns:cobar="http://cobar.alibaba.com/">
+
+  <!-- schema定义 -->
+  <schema name="netdb" dataNode="netDb[0]" keepSqlSchema="true">
+    <table name="CDL_.*" dataNode="netDb$0-9" rule="RULE_IMSI_ND10" groupType="regex" comData="true"/>
+  </schema>
+  <schema name="infdb" dataNode="infDb[0]" keepSqlSchema="true"> 
+    <table name="CDL_.*" dataNode="infDb$0-9" rule="RULE_IMSI_ND10" groupType="regex" comData="true"/>
+  </schema>
+  
+  <schema name="neto_sc" dataNode="netoScDn" keepSqlSchema="true">
+  </schema>
+  <schema name="neto_hb" dataNode="netoHbDn" keepSqlSchema="true">
+  </schema>
+  <schema name="neto_basic" dataNode="basicdDataDn" keepSqlSchema="true">
+  </schema>
+  
+  <dataNode name="netoScDn">
+    <property name="dataSource">
+      <dataSourceRef>cfgDsNeto_sc[0]</dataSourceRef>
+      <dataSourceRef>cfgDsNeto_sc[1]</dataSourceRef>
+    </property>
+	<property name="poolSize">20</property>
+	<property name="heartbeatSQL">select user()</property>
+  </dataNode>
+   <dataNode name="netoHbDn">
+    <property name="dataSource">
+      <dataSourceRef>cfgDsNeto_hb[0]</dataSourceRef>
+      <dataSourceRef>cfgDsNeto_hb[1]</dataSourceRef>
+   </property>
+	<property name="poolSize">20</property>
+	<property name="heartbeatSQL">select user()</property>
+  </dataNode> 
+   <dataNode name="basicdDataDn">
+    <property name="dataSource">
+      <dataSourceRef>cfgDsNeto_Basic[0]</dataSourceRef>
+      <dataSourceRef>cfgDsNeto_Basic[1]</dataSourceRef>
+    </property>
+	<property name="poolSize">20</property>
+	<property name="heartbeatSQL">select user()</property>
+  </dataNode> 
+  
+  
+  <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。-->
+  <dataNode name="netDb">
+    <property name="dataSource">
+      <dataSourceRef>netDbMaster$0-9</dataSourceRef>
+      <dataSourceRef>netDbSlave$0-9</dataSourceRef>
+    </property>
+
+    <!--Cobar与后端数据源连接池大小设置-->
+	<property name="poolSize">128</property>
+	<property name="heartbeatSQL">select user()</property>
+  </dataNode>
+   <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。-->
+  <dataNode name="infDb">
+    <property name="dataSource">
+      <dataSourceRef>infDB$0-9</dataSourceRef>
+    </property>
+	<property name="poolSize">128</property>
+	<property name="heartbeatSQL">select user()</property>
+  </dataNode>
+
+<!-- ias neto_he  neto_basicdata -->
+<dataSource name="cfgDsNeto_sc" type="mysql">
+    <property name="location">
+      <location>133.37.31.56:3309/neto_sc</location>
+      <location>133.37.31.51:3306/neto_sc</location>
+     </property>
+    <property name="user">mydb</property>
+    <property name="password">mydb</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+</dataSource>
+<dataSource name="cfgDsNeto_hb" type="mysql">
+    <property name="location">
+      <location>133.37.31.56:3309/neto_hb</location>
+      <location>133.37.31.51:3306/neto_hb</location>
+     </property>
+    <property name="user">mydb</property>
+    <property name="password">mydb</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+</dataSource>
+<dataSource name="cfgDsNeto_Basic" type="mysql">
+    <property name="location">
+      <location>133.37.31.56:3309/neto_basic</location>
+      <location>133.37.31.51:3306/neto_basic</location>
+     </property>
+    <property name="user">mydb</property>
+    <property name="password">mydb</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+</dataSource>
+  
+ <!-- 数据源定义，数据源是一个具体的后端数据连接的表示。-->
+  <dataSource name="infDB" type="mysql">
+    <property name="location">
+      <location>133.37.31.52:3306/infdb</location>
+      <location>133.37.31.53:3306/infdb</location>
+      <location>133.37.31.54:3306/infdb</location>
+      <location>133.37.31.55:3306/infdb</location>
+      <location>133.37.31.57:3306/infdb</location>
+      <location>133.37.31.58:3306/infdb</location>
+      <location>133.37.31.59:3306/infdb</location>
+      <location>133.37.31.60:3306/infdb</location>
+      <location>133.37.31.61:3306/infdb</location>
+      <location>133.37.31.62:3306/infdb</location>     
+    </property>
+    <property name="user">mydb</property>
+    <property name="password">mydb</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+  <dataSource name="netDbMaster" type="mysql">
+    <property name="location">
+      <location>133.37.31.52:3306/netdb52</location>
+      <location>133.37.31.53:3306/netdb53</location>
+      <location>133.37.31.54:3306/netdb54</location>
+      <location>133.37.31.55:3306/netdb55</location>
+      <location>133.37.31.57:3306/netdb57</location>
+      <location>133.37.31.58:3306/netdb58</location>
+      <location>133.37.31.59:3306/netdb59</location>
+      <location>133.37.31.60:3306/netdb60</location>
+      <location>133.37.31.61:3306/netdb61</location>
+      <location>133.37.31.62:3306/netdb62</location>     
+    </property>
+    <property name="user">mydb</property>
+    <property name="password">mydb</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+  
+    <dataSource name="netDbSlave" type="mysql">
+    <property name="location">
+      <location>133.37.31.53:3306/netdb52</location>
+      <location>133.37.31.52:3306/netdb53</location>
+      <location>133.37.31.55:3306/netdb54</location>
+      <location>133.37.31.54:3306/netdb55</location>
+      <location>133.37.31.58:3306/netdb57</location>
+      <location>133.37.31.57:3306/netdb58</location>
+      <location>133.37.31.60:3306/netdb59</location>
+      <location>133.37.31.59:3306/netdb60</location>
+      <location>133.37.31.62:3306/netdb61</location>
+      <location>133.37.31.61:3306/netdb62</location>  
+    </property>
+    <property name="user">mydb</property>
+    <property name="password">mydb</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+
+</cobar:schema>

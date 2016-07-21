@@ -1,0 +1,155 @@
+16:51:05,380 INFO  ===============================================
+16:51:05,469 INFO  Cobar is ready to startup ...
+16:51:05,470 INFO  Startup processors ...
+16:51:06,135 INFO  Startup connector ...
+16:51:06,196 INFO  Initialize dataNodes ...
+16:51:07,777 INFO  netoHbDn:0 init success
+16:51:07,803 INFO  infDb[2]:0 init success
+16:51:07,832 INFO  netDb[10]:0 init success
+16:51:07,860 INFO  infDb[6]:0 init success
+16:51:07,886 INFO  infDb[4]:0 init success
+16:51:07,910 INFO  netDb[0]:0 init success
+16:51:07,934 INFO  infDb[0]:0 init success
+16:51:07,957 INFO  netDb[4]:0 init success
+16:51:07,980 INFO  netDb[6]:0 init success
+16:51:08,013 INFO  netDb[9]:0 init success
+16:51:08,045 INFO  netDb[8]:0 init success
+16:51:08,076 INFO  netDb[2]:0 init success
+16:51:08,114 INFO  infDb[10]:0 init success
+16:51:08,145 INFO  infDb[7]:0 init success
+16:51:08,164 INFO  netoScDn:0 init success
+16:51:08,213 INFO  infDb[9]:0 init success
+16:51:08,282 INFO  basicdDataDn:0 init success
+16:51:08,352 INFO  netDb[11]:0 init success
+16:51:08,404 INFO  infDb[1]:0 init success
+16:51:08,451 INFO  infDb[3]:0 init success
+16:51:08,543 INFO  infDb[5]:0 init success
+16:51:08,640 INFO  netDb[3]:0 init success
+16:51:08,726 INFO  netDb[1]:0 init success
+16:51:08,789 INFO  netDb[7]:0 init success
+16:51:08,848 INFO  infDb[8]:0 init success
+16:51:08,939 INFO  infDb[11]:0 init success
+16:51:08,968 INFO  netDb[5]:0 init success
+16:51:10,024 INFO  CobarManager is started and listening on 9066
+16:51:10,049 INFO  CobarServer is started and listening on 8066
+16:51:10,050 INFO  ===============================================
+16:52:38,007 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=29019,schema=null]'net' login success
+16:53:10,058 ERROR #!Cobar#[name=cobar12,host=133.37.31.62,port=8066,reason=TIMEOUT]
+16:53:10,067 ERROR #!Cobar#[name=cobar1,host=133.37.31.51,port=8066,reason=TIMEOUT]
+16:53:10,069 ERROR #!Cobar#[name=cobar8,host=133.37.31.58,port=8066,reason=TIMEOUT]
+16:53:30,058 ERROR #!Cobar#[name=cobar8,host=133.37.31.58,port=8066,reason=TIMEOUT]
+16:53:38,984 ERROR #!DN_SWITCH#[name=netDb[8],result=[0->1],reason=TIMEOUT]
+16:53:38,990 ERROR #!DN_SWITCH#[name=netDb[7],result=[0->1],reason=TIMEOUT]
+16:54:28,984 ERROR #!DN_SWITCH#[name=netDb[7],result=[1->0],reason=TIMEOUT]
+17:13:51,087 WARN  [thread=Processor2-R,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=28930,schema=netdb56]
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+17:13:51,087 WARN  [thread=Processor0-R,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=28920,schema=neto_basic]
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+17:13:51,087 WARN  [thread=Processor3-R,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=28904,schema=neto_hb]
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+17:13:51,111 WARN  [thread=Processor2-R,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=28924,schema=infdb]
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+17:13:51,111 WARN  [thread=Processor0-R,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=28918,schema=neto_sc]
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+17:13:52,141 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=neto_basic]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:52,164 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=netdb56]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:52,168 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=neto_sc]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:52,170 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=infdb]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:52,172 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=neto_hb]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:53,181 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=neto_basic]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:53,220 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=neto_sc]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:53,224 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=infdb]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:53,226 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=neto_hb]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:53,228 WARN  [thread=CobarConnector,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=0,schema=netdb56]
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+17:13:55,127 INFO  [thread=Processor2-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=29636,schema=null]'net' login success
+17:17:10,877 WARN  [thread=Processor2-R,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=29636,schema=infdb]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:160)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)

@@ -1,0 +1,113 @@
+16:51:53,648 INFO  ===============================================
+16:51:53,659 INFO  Cobar is ready to startup ...
+16:51:53,660 INFO  Startup processors ...
+16:51:54,161 INFO  Startup connector ...
+16:51:54,218 INFO  Initialize dataNodes ...
+16:51:55,981 INFO  netoHbDn:0 init success
+16:51:56,047 INFO  basicdDataDn:0 init success
+16:51:56,096 INFO  infDb[2]:0 init success
+16:51:56,114 INFO  infDb[1]:0 init success
+16:51:56,178 INFO  infDb[6]:0 init success
+16:51:56,238 INFO  infDb[3]:0 init success
+16:51:56,289 INFO  infDb[4]:0 init success
+16:51:56,361 INFO  infDb[5]:0 init success
+16:51:56,425 INFO  netDb[0]:0 init success
+16:51:56,485 INFO  infDb[0]:0 init success
+16:51:56,543 INFO  netDb[3]:0 init success
+16:51:56,612 INFO  netDb[4]:0 init success
+16:51:56,667 INFO  netDb[6]:0 init success
+16:51:57,001 INFO  netDb[1]:0 init success
+16:51:57,020 INFO  netDb[9]:0 init success
+16:51:57,063 INFO  netDb[8]:0 init success
+16:51:57,122 INFO  netDb[7]:0 init success
+16:51:57,205 INFO  netDb[2]:0 init success
+16:51:57,223 INFO  infDb[8]:0 init success
+16:51:57,239 INFO  infDb[7]:0 init success
+16:51:57,255 INFO  netoScDn:0 init success
+16:51:57,271 INFO  netDb[5]:0 init success
+16:51:57,288 INFO  infDb[9]:0 init success
+16:51:57,429 INFO  CobarManager is started and listening on 9066
+16:51:57,466 INFO  CobarServer is started and listening on 8066
+16:51:57,466 INFO  ===============================================
+16:53:02,178 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=46695,schema=infdb]'net' login success
+16:58:45,759 INFO  ===============================================
+16:58:45,790 INFO  Cobar is ready to startup ...
+16:58:45,791 INFO  Startup processors ...
+16:58:47,422 INFO  Startup connector ...
+16:58:47,620 INFO  Initialize dataNodes ...
+16:58:48,793 INFO  netoHbDn:0 init success
+16:58:48,825 INFO  basicdDataDn:0 init success
+16:58:48,867 INFO  infDb[2]:0 init success
+16:58:48,893 INFO  infDb[1]:0 init success
+16:58:48,957 INFO  infDb[6]:0 init success
+16:58:48,986 INFO  infDb[3]:0 init success
+16:58:49,023 INFO  infDb[4]:0 init success
+16:58:49,058 INFO  infDb[5]:0 init success
+16:58:49,092 INFO  netDb[0]:0 init success
+16:58:49,134 INFO  infDb[0]:0 init success
+16:58:49,165 INFO  netDb[3]:0 init success
+16:58:49,204 INFO  netDb[4]:0 init success
+16:58:49,236 INFO  netDb[6]:0 init success
+16:58:49,269 INFO  netDb[1]:0 init success
+16:58:49,492 INFO  netDb[9]:0 init success
+16:58:49,547 INFO  netDb[8]:0 init success
+16:58:49,596 INFO  netDb[7]:0 init success
+16:58:49,641 INFO  netDb[2]:0 init success
+16:58:49,674 INFO  infDb[8]:0 init success
+16:58:49,705 INFO  infDb[7]:0 init success
+16:58:49,947 INFO  netoScDn:0 init success
+16:58:49,970 INFO  netDb[5]:0 init success
+16:58:50,000 INFO  infDb[9]:0 init success
+16:58:50,074 INFO  CobarManager is started and listening on 9066
+16:58:50,130 INFO  CobarServer is started and listening on 8066
+16:58:50,130 INFO  ===============================================
+16:59:48,763 INFO  ===============================================
+16:59:48,772 INFO  Cobar is ready to startup ...
+16:59:48,773 INFO  Startup processors ...
+16:59:49,125 INFO  Startup connector ...
+16:59:49,157 INFO  Initialize dataNodes ...
+16:59:49,353 INFO  netoHbDn:0 init success
+16:59:49,383 INFO  basicdDataDn:0 init success
+16:59:49,409 INFO  infDb[2]:0 init success
+16:59:49,430 INFO  infDb[1]:0 init success
+16:59:49,463 INFO  infDb[6]:0 init success
+16:59:49,496 INFO  infDb[3]:0 init success
+16:59:49,517 INFO  infDb[4]:0 init success
+16:59:49,542 INFO  infDb[5]:0 init success
+16:59:49,561 INFO  netDb[0]:0 init success
+16:59:49,584 INFO  infDb[0]:0 init success
+16:59:49,613 INFO  netDb[3]:0 init success
+16:59:49,647 INFO  netDb[4]:0 init success
+16:59:49,669 INFO  netDb[6]:0 init success
+16:59:49,692 INFO  netDb[1]:0 init success
+16:59:49,720 INFO  netDb[9]:0 init success
+16:59:49,751 INFO  netDb[8]:0 init success
+16:59:49,777 INFO  netDb[7]:0 init success
+16:59:49,800 INFO  netDb[2]:0 init success
+16:59:49,827 INFO  infDb[8]:0 init success
+16:59:49,846 INFO  infDb[7]:0 init success
+16:59:49,875 INFO  netoScDn:0 init success
+16:59:49,902 INFO  netDb[5]:0 init success
+16:59:49,926 INFO  infDb[9]:0 init success
+16:59:49,961 INFO  CobarManager is started and listening on 9066
+16:59:50,017 INFO  CobarServer is started and listening on 8066
+16:59:50,023 INFO  ===============================================
+17:00:20,348 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=29248,schema=infdb]'net' login success
+17:04:10,053 ERROR #!Cobar#[name=cobar11,host=133.37.31.61,port=8066,reason=TIMEOUT]
+17:04:39,953 ERROR #!DN_SWITCH#[name=netoHbDn,result=[0->1],reason=TIMEOUT]
+17:04:39,962 ERROR #!DN_SWITCH#[name=netDb[0],result=[0->1],reason=TIMEOUT]
+17:04:39,965 ERROR #!DN_SWITCH#[name=netDb[6],result=[0->1],reason=TIMEOUT]
+17:04:39,970 ERROR #!DN_SWITCH#[name=netDb[8],result=[0->1],reason=TIMEOUT]
+17:04:39,989 WARN  [thread=Processor1-R,class=MySQLDetector,host=133.37.31.56,port=3309,localPort=29215,schema=neto_hb]
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+17:05:29,957 ERROR #!DN_SWITCH#[name=netoHbDn,result=[1->0],reason=TIMEOUT]
+17:05:29,959 ERROR #!DN_SWITCH#[name=netDb[8],result=[1->0],reason=TIMEOUT]
+17:09:38,534 WARN  
+ MSG:This statement was not replicated. Statements that insert or update rows in tables with other engines based on rows in InfiniDB tables are not replicated.
+ ROUTE:[thread=Processor1-E1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=29248,schema=infdb] -> [host=133.37.31.53,port=3306,schema=infdb]
+ SQL:INSERT INTO  cdl_dm_cdt_1x_pp_basic_201503 SELECT MOD(DAY_NO,100) day_no,MONTH_NO,WEEK_NO,PROVINCE_ID,CITY_ID,DISTRICT_ID,VENDOR_ID,VERSION_ID,RELATED_OMC,RELATED_BSC,RELATED_BTS,RELATED_SECTOR,GEO_AREA,RADIAL_DISTANCE,WEEK_DAY,ROUND( LONGITUDE_LEFT_UP*1000)LONGITUDE_LEFT_UP,ROUND( LATITUDE_LEFT_UP*1000) LATITUDE_LEFT_UP,COUNT(0) RECORDS FROM cdl_cdt_1x_pp_basic1 t WHERE t.DAY_NO=20150309
+ GROUP BY ROUND( LONGITUDE_LEFT_UP*1000),ROUND( LATITUDE_LEFT_UP*1000),MOD(DAY_NO,100),MONTH_NO,WEEK_NO,PROVINCE_ID,CITY_ID,DISTRICT_ID,VENDOR_ID,VERSION_ID,RELATED_OMC,RELATED_BSC,RELATED_BTS,RELATED_SECTOR,GEO_AREA,RADIAL_DISTANCE,WEEK_DAY

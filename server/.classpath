@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/config"/>
+	<classpathentry kind="src" path="src/main/net"/>
+	<classpathentry kind="src" path="src/main/parser"/>
+	<classpathentry kind="src" path="src/main/route"/>
+	<classpathentry kind="src" path="src/main/server"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="D:/mpp/src/alibaba/Cobar/cobar-master/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="D:/mpp/src/alibaba/Cobar/cobar-master/lib/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="D:/mpp/src/alibaba/Cobar/cobar-master/lib/mysql-connector-java.jar"/>
+	<classpathentry kind="lib" path="D:/mpp/src/alibaba/Cobar/cobar-master/lib/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="D:/mpp/src/alibaba/Cobar/cobar-master/lib/slf4j-log4j12-1.7.5.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

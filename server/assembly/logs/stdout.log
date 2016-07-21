@@ -1,0 +1,437 @@
+08:44:38,225 INFO  ===============================================
+08:44:38,239 INFO  Cobar is ready to startup ...
+08:44:38,240 INFO  Startup processors ...
+08:44:39,044 INFO  Startup connector ...
+08:44:39,124 INFO  Initialize dataNodes ...
+08:44:39,701 INFO  netoHbDn:0 init success
+08:44:39,734 INFO  basicdDataDn:0 init success
+08:44:39,759 INFO  infDb[2]:0 init success
+08:44:39,782 INFO  infDb[1]:0 init success
+08:44:39,813 INFO  infDb[6]:0 init success
+08:44:39,835 INFO  infDb[3]:0 init success
+08:44:39,855 INFO  infDb[4]:0 init success
+08:44:39,875 INFO  infDb[5]:0 init success
+08:44:40,232 INFO  netDb[0]:0 init success
+08:44:40,260 INFO  infDb[0]:0 init success
+08:44:40,280 INFO  netDb[3]:0 init success
+08:44:40,301 INFO  netDb[4]:0 init success
+08:44:40,325 INFO  netDb[6]:0 init success
+08:44:40,368 INFO  netDb[1]:0 init success
+08:44:40,388 INFO  netDb[9]:0 init success
+08:44:40,482 INFO  netDb[8]:0 init success
+08:44:40,827 INFO  netDb[7]:0 init success
+08:44:40,846 INFO  netDb[2]:0 init success
+08:44:41,170 INFO  infDb[8]:0 init success
+08:44:41,190 INFO  infDb[7]:0 init success
+08:44:41,222 INFO  netoScDn:0 init success
+08:44:41,241 INFO  netDb[5]:0 init success
+08:44:41,287 INFO  infDb[9]:0 init success
+08:44:41,406 INFO  CobarManager is started and listening on 9066
+08:44:41,456 INFO  CobarServer is started and listening on 8066
+08:44:41,456 INFO  ===============================================
+08:45:57,427 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=16467,schema=infdb]'net' login success
+08:46:48,118 WARN  [thread=Processor1-H1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=16467,schema=infdb]SELECT  CITY_ID,COUNT(0) c FROM cdl_dm_cdt_1x_pp_basic_201503 PARTITION(P09) GROUP BY  CITY_ID
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; Error occurs around this fragment: {201503 PARTITION(P09) GROU}. Error cause: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:155)
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:160)
+	at com.alibaba.cobar.route.ServerRouter.route(ServerRouter.java:132)
+	at com.alibaba.cobar.server.ServerConnection.execute(ServerConnection.java:185)
+	at com.alibaba.cobar.server.handler.SelectHandler.handle(SelectHandler.java:90)
+	at com.alibaba.cobar.server.ServerQueryHandler.query(ServerQueryHandler.java:63)
+	at com.alibaba.cobar.net.FrontendConnection.query(FrontendConnection.java:273)
+	at com.alibaba.cobar.net.handler.FrontendCommandHandler.handle(FrontendCommandHandler.java:48)
+	at com.alibaba.cobar.net.FrontendConnection$1.run(FrontendConnection.java:379)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.sql.SQLSyntaxErrorException: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:150)
+	... 11 more
+08:48:58,942 WARN  [thread=Processor1-H2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=16467,schema=infdb]SELECT  CITY_ID,COUNT(0) c FROM cdl_dm_cdt_1x_pp_basic_201503 PARTITION(P09) GROUP BY  CITY_ID
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; Error occurs around this fragment: {201503 PARTITION(P09) GROU}. Error cause: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:155)
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:160)
+	at com.alibaba.cobar.route.ServerRouter.route(ServerRouter.java:132)
+	at com.alibaba.cobar.server.ServerConnection.execute(ServerConnection.java:185)
+	at com.alibaba.cobar.server.handler.SelectHandler.handle(SelectHandler.java:90)
+	at com.alibaba.cobar.server.ServerQueryHandler.query(ServerQueryHandler.java:63)
+	at com.alibaba.cobar.net.FrontendConnection.query(FrontendConnection.java:273)
+	at com.alibaba.cobar.net.handler.FrontendCommandHandler.handle(FrontendCommandHandler.java:48)
+	at com.alibaba.cobar.net.FrontendConnection$1.run(FrontendConnection.java:379)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.sql.SQLSyntaxErrorException: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:150)
+	... 11 more
+08:49:32,778 WARN  [thread=Processor1-H3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=16467,schema=infdb]SELECT  CITY_ID,COUNT(0) c FROM cdl_dm_cdt_1x_pp_basic_201503 PARTITION(P09) GROUP BY  CITY_ID
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; Error occurs around this fragment: {201503 PARTITION(P09) GROU}. Error cause: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:155)
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:160)
+	at com.alibaba.cobar.route.ServerRouter.route(ServerRouter.java:132)
+	at com.alibaba.cobar.server.ServerConnection.execute(ServerConnection.java:185)
+	at com.alibaba.cobar.server.handler.SelectHandler.handle(SelectHandler.java:90)
+	at com.alibaba.cobar.server.ServerQueryHandler.query(ServerQueryHandler.java:63)
+	at com.alibaba.cobar.net.FrontendConnection.query(FrontendConnection.java:273)
+	at com.alibaba.cobar.net.handler.FrontendCommandHandler.handle(FrontendCommandHandler.java:48)
+	at com.alibaba.cobar.net.FrontendConnection$1.run(FrontendConnection.java:379)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.sql.SQLSyntaxErrorException: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:150)
+	... 11 more
+08:49:40,825 WARN  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=16467,schema=infdb]SELECT  CITY_ID,COUNT(0) c FROM cdl_dm_cdt_1x_pp_basic_201503 PARTITION(P09) GROUP BY  CITY_ID
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; Error occurs around this fragment: {201503 PARTITION(P09) GROU}. Error cause: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:155)
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:160)
+	at com.alibaba.cobar.route.ServerRouter.route(ServerRouter.java:132)
+	at com.alibaba.cobar.server.ServerConnection.execute(ServerConnection.java:185)
+	at com.alibaba.cobar.server.handler.SelectHandler.handle(SelectHandler.java:90)
+	at com.alibaba.cobar.server.ServerQueryHandler.query(ServerQueryHandler.java:63)
+	at com.alibaba.cobar.net.FrontendConnection.query(FrontendConnection.java:273)
+	at com.alibaba.cobar.net.handler.FrontendCommandHandler.handle(FrontendCommandHandler.java:48)
+	at com.alibaba.cobar.net.FrontendConnection$1.run(FrontendConnection.java:379)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.sql.SQLSyntaxErrorException: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:150)
+	... 11 more
+08:50:14,359 WARN  [thread=Processor1-H1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=16467,schema=infdb]SELECT  CITY_ID,COUNT(0) c FROM cdl_dm_cdt_1x_pp_basic_201503 PARTITION(P09) GROUP BY  CITY_ID
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; Error occurs around this fragment: {201503 PARTITION(P09) GROU}. Error cause: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:155)
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:160)
+	at com.alibaba.cobar.route.ServerRouter.route(ServerRouter.java:132)
+	at com.alibaba.cobar.server.ServerConnection.execute(ServerConnection.java:185)
+	at com.alibaba.cobar.server.handler.SelectHandler.handle(SelectHandler.java:90)
+	at com.alibaba.cobar.server.ServerQueryHandler.query(ServerQueryHandler.java:63)
+	at com.alibaba.cobar.net.FrontendConnection.query(FrontendConnection.java:273)
+	at com.alibaba.cobar.net.handler.FrontendCommandHandler.handle(FrontendCommandHandler.java:48)
+	at com.alibaba.cobar.net.FrontendConnection$1.run(FrontendConnection.java:379)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.sql.SQLSyntaxErrorException: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:150)
+	... 11 more
+08:52:42,026 WARN  [thread=Processor1-H2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=16467,schema=infdb]SELECT  CITY_ID,COUNT(0) c FROM cdl_dm_cdt_1x_pp_basic_201503 PARTITION(P09) GROUP BY  CITY_ID
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; Error occurs around this fragment: {201503 PARTITION(P09) GROU}. Error cause: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:155)
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:160)
+	at com.alibaba.cobar.route.ServerRouter.route(ServerRouter.java:132)
+	at com.alibaba.cobar.server.ServerConnection.execute(ServerConnection.java:185)
+	at com.alibaba.cobar.server.handler.SelectHandler.handle(SelectHandler.java:90)
+	at com.alibaba.cobar.server.ServerQueryHandler.query(ServerQueryHandler.java:63)
+	at com.alibaba.cobar.net.FrontendConnection.query(FrontendConnection.java:273)
+	at com.alibaba.cobar.net.handler.FrontendCommandHandler.handle(FrontendCommandHandler.java:48)
+	at com.alibaba.cobar.net.FrontendConnection$1.run(FrontendConnection.java:379)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.sql.SQLSyntaxErrorException: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:150)
+	... 11 more
+08:59:22,644 WARN  [thread=Processor1-H3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=16467,schema=infdb]SELECT  CITY_ID,COUNT(0) c FROM cdl_dm_cdt_1x_pp_basic_201503 PARTITION(P09) GROUP BY  CITY_ID
+java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; Error occurs around this fragment: {201503 PARTITION(P09) GROU}. Error cause: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:155)
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:160)
+	at com.alibaba.cobar.route.ServerRouter.route(ServerRouter.java:132)
+	at com.alibaba.cobar.server.ServerConnection.execute(ServerConnection.java:185)
+	at com.alibaba.cobar.server.handler.SelectHandler.handle(SelectHandler.java:90)
+	at com.alibaba.cobar.server.ServerQueryHandler.query(ServerQueryHandler.java:63)
+	at com.alibaba.cobar.net.FrontendConnection.query(FrontendConnection.java:273)
+	at com.alibaba.cobar.net.handler.FrontendCommandHandler.handle(FrontendCommandHandler.java:48)
+	at com.alibaba.cobar.net.FrontendConnection$1.run(FrontendConnection.java:379)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: java.sql.SQLSyntaxErrorException: SQL syntax error!
+	at com.alibaba.cobar.parser.recognizer.SQLParserDelegate.parse(SQLParserDelegate.java:150)
+	... 11 more
+09:12:43,625 INFO  ===============================================
+09:12:43,628 INFO  Cobar is ready to startup ...
+09:12:43,628 INFO  Startup processors ...
+09:12:43,984 INFO  Startup connector ...
+09:12:44,032 INFO  Initialize dataNodes ...
+09:12:44,348 INFO  netoHbDn:0 init success
+09:12:44,420 INFO  basicdDataDn:0 init success
+09:12:44,465 INFO  infDb[2]:0 init success
+09:12:44,525 INFO  infDb[1]:0 init success
+09:12:44,546 INFO  infDb[6]:0 init success
+09:12:44,564 INFO  infDb[3]:0 init success
+09:12:44,603 INFO  infDb[4]:0 init success
+09:12:44,617 INFO  infDb[5]:0 init success
+09:12:44,633 INFO  netDb[0]:0 init success
+09:12:44,646 INFO  infDb[0]:0 init success
+09:12:44,662 INFO  netDb[3]:0 init success
+09:12:44,676 INFO  netDb[4]:0 init success
+09:12:44,722 INFO  netDb[6]:0 init success
+09:12:44,739 INFO  netDb[1]:0 init success
+09:12:44,756 INFO  netDb[9]:0 init success
+09:12:44,797 INFO  netDb[8]:0 init success
+09:12:44,850 INFO  netDb[7]:0 init success
+09:12:44,910 INFO  netDb[2]:0 init success
+09:12:44,950 INFO  infDb[8]:0 init success
+09:12:44,971 INFO  infDb[7]:0 init success
+09:12:44,986 INFO  netoScDn:0 init success
+09:12:45,001 INFO  netDb[5]:0 init success
+09:12:45,015 INFO  infDb[9]:0 init success
+09:12:45,108 INFO  CobarManager is started and listening on 9066
+09:12:45,175 INFO  CobarServer is started and listening on 8066
+09:12:45,177 INFO  ===============================================
+09:12:48,254 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=23981,schema=infdb]'net' login success
+10:54:53,364 INFO  ===============================================
+10:54:53,380 INFO  Cobar is ready to startup ...
+10:54:53,382 INFO  Startup processors ...
+10:54:54,057 INFO  Startup connector ...
+10:54:54,147 INFO  Initialize dataNodes ...
+10:54:54,726 INFO  netoHbDn:0 init success
+10:54:55,063 INFO  basicdDataDn:0 init success
+10:54:55,133 INFO  infDb[2]:0 init success
+10:54:55,210 INFO  infDb[1]:0 init success
+10:54:55,231 INFO  infDb[6]:0 init success
+10:54:55,319 INFO  infDb[3]:0 init success
+10:54:55,404 INFO  infDb[4]:0 init success
+10:54:55,473 INFO  infDb[5]:0 init success
+10:54:55,534 INFO  netDb[0]:0 init success
+10:54:55,560 INFO  infDb[0]:0 init success
+10:54:55,578 INFO  netDb[3]:0 init success
+10:54:55,598 INFO  netDb[4]:0 init success
+10:54:55,614 INFO  netDb[6]:0 init success
+10:54:55,645 INFO  netDb[1]:0 init success
+10:54:55,664 INFO  netDb[9]:0 init success
+10:54:55,684 INFO  netDb[8]:0 init success
+10:54:55,701 INFO  netDb[7]:0 init success
+10:54:55,764 INFO  netDb[2]:0 init success
+10:54:55,820 INFO  infDb[8]:0 init success
+10:54:55,880 INFO  infDb[7]:0 init success
+10:54:55,905 INFO  netoScDn:0 init success
+10:54:55,920 INFO  netDb[5]:0 init success
+10:54:55,950 INFO  infDb[9]:0 init success
+10:54:56,118 INFO  CobarManager is started and listening on 9066
+10:54:56,183 INFO  CobarServer is started and listening on 8066
+10:54:56,184 INFO  ===============================================
+11:00:22,999 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=7625,schema=infdb]'net' login success
+11:05:11,218 ERROR #!Cobar#[name=cobar9,host=133.37.31.59,port=8066,reason=TIMEOUT]
+11:05:46,012 ERROR #!DN_SWITCH#[name=netoHbDn,result=[0->1],reason=TIMEOUT]
+11:05:46,014 ERROR #!DN_SWITCH#[name=netDb[6],result=[0->1],reason=TIMEOUT]
+11:05:46,015 ERROR #!DN_SWITCH#[name=netDb[8],result=[0->1],reason=TIMEOUT]
+11:05:46,017 ERROR #!DN_SWITCH#[name=netoScDn,result=[0->1],reason=TIMEOUT]
+11:06:36,013 ERROR #!DN_SWITCH#[name=netoHbDn,result=[1->0],reason=TIMEOUT]
+11:06:36,016 ERROR #!DN_SWITCH#[name=netDb[8],result=[1->0],reason=TIMEOUT]
+11:17:21,322 ERROR #!Cobar#[name=cobar12,host=133.37.31.62,port=8066,reason=TIMEOUT]
+11:17:21,324 ERROR #!Cobar#[name=cobar9,host=133.37.31.59,port=8066,reason=TIMEOUT]
+11:17:41,324 ERROR #!Cobar#[name=cobar12,host=133.37.31.62,port=8066,reason=TIMEOUT]
+11:17:46,037 ERROR #!DN_SWITCH#[name=netDb[0],result=[0->1],reason=TIMEOUT]
+11:17:46,038 ERROR #!DN_SWITCH#[name=netDb[6],result=[1->0],reason=TIMEOUT]
+11:17:46,039 ERROR #!DN_SWITCH#[name=netDb[8],result=[0->1],reason=TIMEOUT]
+11:18:06,067 WARN  [thread=Processor0-R,class=MySQLDetector,host=133.37.31.61,port=3306,localPort=21366,schema=infdb]
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+11:18:06,092 WARN  [thread=Processor0-R,class=MySQLDetector,host=133.37.31.54,port=3306,localPort=21361,schema=infdb]
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+11:18:36,038 ERROR #!DN_SWITCH#[name=netDb[0],result=[1->0],reason=TIMEOUT]
+11:18:36,040 ERROR #!DN_SWITCH#[name=netDb[8],result=[1->0],reason=TIMEOUT]
+11:19:26,039 ERROR #!DN_SWITCH#[name=netDb[0],result=[0->1],reason=TIMEOUT]
+11:55:10,127 INFO  ===============================================
+11:55:10,130 INFO  Cobar is ready to startup ...
+11:55:10,131 INFO  Startup processors ...
+11:55:10,470 INFO  Startup connector ...
+11:55:10,508 INFO  Initialize dataNodes ...
+11:55:10,710 INFO  netoHbDn:0 init success
+11:55:10,729 INFO  basicdDataDn:0 init success
+11:55:10,744 INFO  infDb[2]:0 init success
+11:55:11,075 INFO  infDb[1]:0 init success
+11:55:11,423 INFO  infDb[6]:0 init success
+11:55:11,447 INFO  infDb[3]:0 init success
+11:55:11,466 INFO  infDb[4]:0 init success
+11:55:11,506 INFO  infDb[5]:0 init success
+11:55:11,541 INFO  netDb[0]:0 init success
+11:55:11,592 INFO  infDb[0]:0 init success
+11:55:11,648 INFO  netDb[3]:0 init success
+11:55:11,673 INFO  netDb[4]:0 init success
+11:55:11,705 INFO  netDb[6]:0 init success
+11:55:11,728 INFO  netDb[1]:0 init success
+11:55:11,754 INFO  netDb[9]:0 init success
+11:55:11,788 INFO  netDb[8]:0 init success
+11:55:11,810 INFO  netDb[7]:0 init success
+11:55:11,873 INFO  netDb[2]:0 init success
+11:55:11,934 INFO  infDb[8]:0 init success
+11:55:11,996 INFO  infDb[7]:0 init success
+11:55:12,054 INFO  netoScDn:0 init success
+11:55:12,081 INFO  netDb[5]:0 init success
+11:55:12,115 INFO  infDb[9]:0 init success
+11:55:12,174 INFO  CobarManager is started and listening on 9066
+11:55:12,251 INFO  CobarServer is started and listening on 8066
+11:55:12,251 INFO  ===============================================
+11:56:42,621 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=26274,schema=infdb]'net' login success
+11:57:07,277 ERROR #!Cobar#[name=cobar12,host=133.37.31.62,port=8066,reason=TIMEOUT]
+11:57:32,131 ERROR #!DN_SWITCH#[name=netoHbDn,result=[0->1],reason=TIMEOUT]
+11:57:32,137 ERROR #!DN_SWITCH#[name=netDb[0],result=[0->1],reason=TIMEOUT]
+11:57:32,141 ERROR #!DN_SWITCH#[name=netDb[6],result=[0->1],reason=TIMEOUT]
+11:57:32,144 ERROR #!DN_SWITCH#[name=netDb[7],result=[0->1],reason=TIMEOUT]
+11:57:32,149 ERROR #!DN_SWITCH#[name=netoScDn,result=[0->1],reason=TIMEOUT]
+11:58:22,133 ERROR #!DN_SWITCH#[name=netoHbDn,result=[1->0],reason=TIMEOUT]
+11:58:22,136 ERROR #!DN_SWITCH#[name=netDb[7],result=[1->0],reason=TIMEOUT]
+12:34:33,526 WARN  [thread=Processor2-E7,class=MySQLDetector,host=133.37.31.60,port=3306,localPort=26292,schema=netdb59]
+com.alibaba.cobar.exception.HeartbeatException: The table '$vtable_145' is full
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleErrorPacket(MySQLDetectorHandler.java:116)
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleData(MySQLDetectorHandler.java:62)
+	at com.alibaba.cobar.net.handler.BackendAsyncHandler$1.run(BackendAsyncHandler.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+12:47:00,287 INFO  ===============================================
+12:47:00,291 INFO  Cobar is ready to startup ...
+12:47:00,291 INFO  Startup processors ...
+12:47:00,487 INFO  Startup connector ...
+12:47:00,518 INFO  Initialize dataNodes ...
+12:47:00,696 INFO  netoHbDn:0 init success
+12:47:00,715 INFO  basicdDataDn:0 init success
+12:47:00,731 INFO  infDb[2]:0 init success
+12:47:00,747 INFO  infDb[1]:0 init success
+12:47:00,785 INFO  infDb[6]:0 init success
+12:47:00,805 INFO  infDb[3]:0 init success
+12:47:00,821 INFO  infDb[4]:0 init success
+12:47:00,854 INFO  infDb[5]:0 init success
+12:47:00,872 INFO  netDb[0]:0 init success
+12:47:00,888 INFO  infDb[0]:0 init success
+12:47:00,906 INFO  netDb[3]:0 init success
+12:47:00,935 INFO  netDb[4]:0 init success
+12:47:00,992 INFO  netDb[6]:0 init success
+12:47:01,037 INFO  netDb[1]:0 init success
+12:47:01,103 INFO  netDb[9]:0 init success
+12:47:01,166 INFO  netDb[8]:0 init success
+12:47:01,199 INFO  netDb[7]:0 init success
+12:47:01,259 INFO  netDb[2]:0 init success
+12:47:01,316 INFO  infDb[8]:0 init success
+12:47:01,351 INFO  infDb[7]:0 init success
+12:47:01,404 INFO  netoScDn:0 init success
+12:47:01,456 INFO  netDb[5]:0 init success
+12:47:01,505 INFO  infDb[9]:0 init success
+12:47:01,540 INFO  CobarManager is started and listening on 9066
+12:47:01,591 INFO  CobarServer is started and listening on 8066
+12:47:01,591 INFO  ===============================================
+12:47:12,958 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=45393,schema=infdb]'net' login success
+12:47:26,495 WARN  [thread=Processor1-H1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=45393,schema=infdb]
+java.lang.NullPointerException
+	at com.alibaba.cobar.mysql.bio.executor.MultiNodeExecutor.execute(MultiNodeExecutor.java:166)
+	at com.alibaba.cobar.server.session.BlockingSession.execute(BlockingSession.java:103)
+	at com.alibaba.cobar.server.ServerConnection.execute(ServerConnection.java:200)
+	at com.alibaba.cobar.server.ServerQueryHandler.query(ServerQueryHandler.java:90)
+	at com.alibaba.cobar.net.FrontendConnection.query(FrontendConnection.java:273)
+	at com.alibaba.cobar.net.handler.FrontendCommandHandler.handle(FrontendCommandHandler.java:48)
+	at com.alibaba.cobar.net.FrontendConnection$1.run(FrontendConnection.java:379)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+12:48:15,537 INFO  ===============================================
+12:48:15,541 INFO  Cobar is ready to startup ...
+12:48:15,542 INFO  Startup processors ...
+12:48:15,741 INFO  Startup connector ...
+12:48:15,769 INFO  Initialize dataNodes ...
+12:48:15,943 INFO  netoHbDn:0 init success
+12:48:15,994 INFO  basicdDataDn:0 init success
+12:48:16,026 INFO  infDb[2]:0 init success
+12:48:16,069 INFO  infDb[1]:0 init success
+12:48:16,116 INFO  infDb[6]:0 init success
+12:48:16,173 INFO  infDb[3]:0 init success
+12:48:16,212 INFO  infDb[4]:0 init success
+12:48:16,270 INFO  infDb[5]:0 init success
+12:48:16,325 INFO  netDb[0]:0 init success
+12:48:16,379 INFO  infDb[0]:0 init success
+12:48:16,442 INFO  netDb[3]:0 init success
+12:48:16,507 INFO  netDb[4]:0 init success
+12:48:16,560 INFO  netDb[6]:0 init success
+12:48:17,797 INFO  netDb[1]:0 init success
+12:48:17,829 INFO  netDb[9]:0 init success
+12:48:17,861 INFO  netDb[8]:0 init success
+12:48:17,879 INFO  netDb[7]:0 init success
+12:48:17,898 INFO  netDb[2]:0 init success
+12:48:17,942 INFO  infDb[8]:0 init success
+12:48:18,003 INFO  infDb[7]:0 init success
+12:48:18,019 INFO  netoScDn:0 init success
+12:48:18,034 INFO  netDb[5]:0 init success
+12:48:18,068 INFO  infDb[9]:0 init success
+12:48:18,140 INFO  CobarManager is started and listening on 9066
+12:48:18,225 INFO  CobarServer is started and listening on 8066
+12:48:18,225 INFO  ===============================================
+12:48:26,981 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=45463,schema=infdb]'net' login success
+12:48:43,228 ERROR #!Cobar#[name=cobar12,host=133.37.31.62,port=8066,reason=TIMEOUT]
+12:48:43,232 ERROR #!Cobar#[name=cobar11,host=133.37.31.61,port=8066,reason=TIMEOUT]
+12:49:03,229 ERROR #!Cobar#[name=cobar11,host=133.37.31.61,port=8066,reason=TIMEOUT]
+12:49:08,078 ERROR #!DN_SWITCH#[name=netoHbDn,result=[0->1],reason=TIMEOUT]
+12:49:08,083 ERROR #!DN_SWITCH#[name=netDb[0],result=[0->1],reason=TIMEOUT]
+12:49:08,086 ERROR #!DN_SWITCH#[name=netDb[4],result=[0->1],reason=TIMEOUT]
+12:49:08,088 ERROR #!DN_SWITCH#[name=netDb[9],result=[0->1],reason=TIMEOUT]
+12:49:08,098 ERROR #!DN_SWITCH#[name=netDb[2],result=[0->1],reason=TIMEOUT]
+12:49:08,101 ERROR #!DN_SWITCH#[name=netoScDn,result=[0->1],reason=TIMEOUT]
+12:49:58,077 ERROR #!DN_SWITCH#[name=netoHbDn,result=[1->0],reason=TIMEOUT]
+12:49:58,083 ERROR #!DN_SWITCH#[name=netDb[0],result=[1->0],reason=TIMEOUT]
+12:49:58,093 ERROR #!DN_SWITCH#[name=netDb[2],result=[1->0],reason=TIMEOUT]
+12:49:58,096 ERROR #!DN_SWITCH#[name=netoScDn,result=[1->0],reason=TIMEOUT]
+12:50:48,077 ERROR #!DN_SWITCH#[name=netoHbDn,result=[0->1],reason=TIMEOUT]
+12:50:48,078 ERROR #!DN_SWITCH#[name=netDb[0],result=[0->1],reason=TIMEOUT]
+12:50:48,080 ERROR #!DN_SWITCH#[name=netDb[2],result=[0->1],reason=TIMEOUT]
+12:51:38,079 ERROR #!DN_SWITCH#[name=netDb[0],result=[1->0],reason=TIMEOUT]
+12:51:38,083 ERROR #!DN_SWITCH#[name=netDb[2],result=[1->0],reason=TIMEOUT]
+12:52:28,079 ERROR #!DN_SWITCH#[name=netDb[2],result=[0->1],reason=TIMEOUT]
+14:19:30,242 WARN  [thread=Processor0-E4,class=MySQLDetector,host=133.37.31.60,port=3306,localPort=45454,schema=infdb]
+com.alibaba.cobar.exception.HeartbeatException: The table '$vtable_155' is full
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleErrorPacket(MySQLDetectorHandler.java:116)
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleData(MySQLDetectorHandler.java:62)
+	at com.alibaba.cobar.net.handler.BackendAsyncHandler$1.run(BackendAsyncHandler.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+14:19:41,788 WARN  [thread=Processor0-E4,class=MySQLDetector,host=133.37.31.59,port=3306,localPort=45445,schema=netdb59]
+com.alibaba.cobar.exception.HeartbeatException: The table '$vtable_102' is full
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleErrorPacket(MySQLDetectorHandler.java:116)
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleData(MySQLDetectorHandler.java:62)
+	at com.alibaba.cobar.net.handler.BackendAsyncHandler$1.run(BackendAsyncHandler.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+14:21:00,193 WARN  [thread=Processor0-E4,class=MySQLDetector,host=133.37.31.61,port=3306,localPort=45486,schema=infdb]
+com.alibaba.cobar.exception.HeartbeatException: The table '$vtable_106' is full
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleErrorPacket(MySQLDetectorHandler.java:116)
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleData(MySQLDetectorHandler.java:62)
+	at com.alibaba.cobar.net.handler.BackendAsyncHandler$1.run(BackendAsyncHandler.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+14:21:00,472 WARN  [thread=Processor0-E2,class=MySQLDetector,host=133.37.31.61,port=3306,localPort=45450,schema=netdb61]
+com.alibaba.cobar.exception.HeartbeatException: The table '$vtable_103' is full
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleErrorPacket(MySQLDetectorHandler.java:116)
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleData(MySQLDetectorHandler.java:62)
+	at com.alibaba.cobar.net.handler.BackendAsyncHandler$1.run(BackendAsyncHandler.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+14:25:01,378 WARN  [thread=Processor0-E3,class=MySQLDetector,host=133.37.31.53,port=3306,localPort=45446,schema=netdb53]
+com.alibaba.cobar.exception.HeartbeatException: The table '$vtable_228' is full
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleErrorPacket(MySQLDetectorHandler.java:116)
+	at com.alibaba.cobar.heartbeat.MySQLDetectorHandler.handleData(MySQLDetectorHandler.java:62)
+	at com.alibaba.cobar.net.handler.BackendAsyncHandler$1.run(BackendAsyncHandler.java:56)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+16:09:11,486 WARN  [thread=Processor1-R,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=45463,schema=infdb]
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:379)
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:160)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)

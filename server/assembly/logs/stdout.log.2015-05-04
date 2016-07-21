@@ -1,0 +1,236 @@
+17:37:04,066 INFO  ===============================================
+17:37:04,109 INFO  Cobar is ready to startup ...
+17:37:04,132 INFO  Startup processors ...
+17:37:05,038 INFO  Startup connector ...
+17:37:05,092 INFO  Initialize dataNodes ...
+17:37:05,835 INFO  netoHbDn:0 init success
+17:37:05,862 INFO  infDb[2]:0 init success
+17:37:05,904 INFO  netDb[10]:0 init success
+17:37:05,943 INFO  infDb[6]:0 init success
+17:37:05,969 INFO  infDb[4]:0 init success
+17:37:06,004 INFO  netDb[0]:0 init success
+17:37:06,031 INFO  infDb[0]:0 init success
+17:37:06,069 INFO  netDb[4]:0 init success
+17:37:06,105 INFO  netDb[6]:0 init success
+17:37:06,137 INFO  netDb[9]:0 init success
+17:37:06,170 INFO  netDb[8]:0 init success
+17:37:06,207 INFO  netDb[2]:0 init success
+17:37:06,247 INFO  infDb[10]:0 init success
+17:37:06,283 INFO  infDb[7]:0 init success
+17:37:06,344 INFO  netoScDn:0 init success
+17:37:06,396 INFO  infDb[9]:0 init success
+17:37:06,458 INFO  basicdDataDn:0 init success
+17:37:06,487 INFO  netDb[11]:0 init success
+17:37:06,515 INFO  infDb[1]:0 init success
+17:37:06,560 INFO  infDb[3]:0 init success
+17:37:06,598 INFO  infDb[5]:0 init success
+17:37:06,627 INFO  netDb[3]:0 init success
+17:37:06,677 INFO  netDb[1]:0 init success
+17:37:06,700 INFO  netDb[7]:0 init success
+17:37:06,732 INFO  infDb[8]:0 init success
+17:37:06,769 INFO  infDb[11]:0 init success
+17:37:06,800 INFO  netDb[5]:0 init success
+17:37:06,967 INFO  CobarManager is started and listening on 9066
+17:37:07,023 INFO  CobarServer is started and listening on 8066
+17:37:07,024 INFO  ===============================================
+17:37:07,372 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=65029,schema=infdb]'net' login success
+18:05:13,478 INFO  ===============================================
+18:05:13,482 INFO  Cobar is ready to startup ...
+18:05:13,484 INFO  Startup processors ...
+18:05:13,931 INFO  Startup connector ...
+18:05:14,013 INFO  Initialize dataNodes ...
+18:05:14,287 INFO  netoHbDn:0 init success
+18:05:14,309 INFO  infDb[2]:0 init success
+18:05:14,331 INFO  netDb[10]:0 init success
+18:05:14,361 INFO  infDb[6]:0 init success
+18:05:14,382 INFO  infDb[4]:0 init success
+18:05:14,409 INFO  netDb[0]:0 init success
+18:05:14,438 INFO  infDb[0]:0 init success
+18:05:14,469 INFO  netDb[4]:0 init success
+18:05:14,492 INFO  netDb[6]:0 init success
+18:05:14,513 INFO  netDb[9]:0 init success
+18:05:14,537 INFO  netDb[8]:0 init success
+18:05:14,564 INFO  netDb[2]:0 init success
+18:05:14,588 INFO  infDb[10]:0 init success
+18:05:14,613 INFO  infDb[7]:0 init success
+18:05:14,638 INFO  netoScDn:0 init success
+18:05:14,676 INFO  infDb[9]:0 init success
+18:05:14,704 INFO  basicdDataDn:0 init success
+18:05:14,731 INFO  netDb[11]:0 init success
+18:05:14,763 INFO  infDb[1]:0 init success
+18:05:14,784 INFO  infDb[3]:0 init success
+18:05:14,807 INFO  infDb[5]:0 init success
+18:05:14,831 INFO  netDb[3]:0 init success
+18:05:14,855 INFO  netDb[1]:0 init success
+18:05:14,888 INFO  netDb[7]:0 init success
+18:05:14,914 INFO  infDb[8]:0 init success
+18:05:14,940 INFO  infDb[11]:0 init success
+18:05:14,977 INFO  netDb[5]:0 init success
+18:05:15,075 INFO  CobarManager is started and listening on 9066
+18:05:15,101 INFO  CobarServer is started and listening on 8066
+18:05:15,101 INFO  ===============================================
+18:05:17,637 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=52560,schema=infdb]'net' login success
+18:13:29,387 INFO  ===============================================
+18:13:29,389 INFO  Cobar is ready to startup ...
+18:13:29,390 INFO  Startup processors ...
+18:13:29,973 INFO  Startup connector ...
+18:13:30,056 INFO  Initialize dataNodes ...
+18:13:30,409 INFO  netoHbDn:0 init success
+18:13:30,452 INFO  infDb[2]:0 init success
+18:13:30,504 INFO  netDb[10]:0 init success
+18:13:30,537 INFO  infDb[6]:0 init success
+18:13:30,626 INFO  infDb[4]:0 init success
+18:13:30,659 INFO  netDb[0]:0 init success
+18:13:30,735 INFO  infDb[0]:0 init success
+18:13:30,780 INFO  netDb[4]:0 init success
+18:13:30,807 INFO  netDb[6]:0 init success
+18:13:30,843 INFO  netDb[9]:0 init success
+18:13:30,887 INFO  netDb[8]:0 init success
+18:13:30,995 INFO  netDb[2]:0 init success
+18:13:31,025 INFO  infDb[10]:0 init success
+18:13:31,061 INFO  infDb[7]:0 init success
+18:13:31,086 INFO  netoScDn:0 init success
+18:13:31,161 INFO  infDb[9]:0 init success
+18:13:31,204 INFO  basicdDataDn:0 init success
+18:13:31,226 INFO  netDb[11]:0 init success
+18:13:31,271 INFO  infDb[1]:0 init success
+18:13:31,298 INFO  infDb[3]:0 init success
+18:13:31,324 INFO  infDb[5]:0 init success
+18:13:31,381 INFO  netDb[3]:0 init success
+18:13:31,416 INFO  netDb[1]:0 init success
+18:13:31,597 INFO  netDb[7]:0 init success
+18:13:31,621 INFO  infDb[8]:0 init success
+18:13:31,656 INFO  infDb[11]:0 init success
+18:13:31,722 INFO  netDb[5]:0 init success
+18:13:31,838 INFO  CobarManager is started and listening on 9066
+18:13:31,867 INFO  CobarServer is started and listening on 8066
+18:13:31,872 INFO  ===============================================
+18:13:39,177 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=53764,schema=infdb]'net' login success
+18:31:27,065 INFO  ===============================================
+18:31:27,069 INFO  Cobar is ready to startup ...
+18:31:27,071 INFO  Startup processors ...
+18:31:27,707 INFO  Startup connector ...
+18:31:27,765 INFO  Initialize dataNodes ...
+18:31:28,241 INFO  netoHbDn:0 init success
+18:31:28,280 INFO  infDb[2]:0 init success
+18:31:28,313 INFO  netDb[10]:0 init success
+18:31:28,343 INFO  infDb[6]:0 init success
+18:31:28,400 INFO  infDb[4]:0 init success
+18:31:28,430 INFO  netDb[0]:0 init success
+18:31:28,462 INFO  infDb[0]:0 init success
+18:31:28,507 INFO  netDb[4]:0 init success
+18:31:28,582 INFO  netDb[6]:0 init success
+18:31:28,669 INFO  netDb[9]:0 init success
+18:31:28,710 INFO  netDb[8]:0 init success
+18:31:28,739 INFO  netDb[2]:0 init success
+18:31:28,777 INFO  infDb[10]:0 init success
+18:31:28,861 INFO  infDb[7]:0 init success
+18:31:28,892 INFO  netoScDn:0 init success
+18:31:28,925 INFO  infDb[9]:0 init success
+18:31:28,974 INFO  basicdDataDn:0 init success
+18:31:28,994 INFO  netDb[11]:0 init success
+18:31:29,047 INFO  infDb[1]:0 init success
+18:31:29,078 INFO  infDb[3]:0 init success
+18:31:29,139 INFO  infDb[5]:0 init success
+18:31:29,168 INFO  netDb[3]:0 init success
+18:31:29,212 INFO  netDb[1]:0 init success
+18:31:29,235 INFO  netDb[7]:0 init success
+18:31:29,272 INFO  infDb[8]:0 init success
+18:31:29,325 INFO  infDb[11]:0 init success
+18:31:29,351 INFO  netDb[5]:0 init success
+18:31:29,477 INFO  CobarManager is started and listening on 9066
+18:31:29,516 INFO  CobarServer is started and listening on 8066
+18:31:29,516 INFO  ===============================================
+18:31:35,957 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=56311,schema=infdb]'net' login success
+18:49:45,882 INFO  [thread=Processor2-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=58849,schema=null]'net' login success
+18:49:46,780 INFO  [thread=Processor3-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=58853,schema=null]'net' login success
+18:49:49,882 INFO  [thread=Processor0-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=58861,schema=infdb]'net' login success
+19:08:58,163 INFO  [thread=Processor1-H3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=63448,schema=infdb]'net' login success
+19:08:59,144 INFO  [thread=Processor2-H3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=63451,schema=infdb]'net' login success
+19:09:00,670 INFO  [thread=Processor3-H3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=63454,schema=infdb]'net' login success
+19:09:01,807 INFO  [thread=Processor0-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=63458,schema=infdb]'net' login success
+19:09:29,538 INFO  [thread=Processor1-H1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=63518,schema=infdb]'net' login success
+19:09:55,053 INFO  ===============================================
+19:09:55,059 INFO  Cobar is ready to startup ...
+19:09:55,060 INFO  Startup processors ...
+19:09:55,704 INFO  Startup connector ...
+19:09:55,765 INFO  Initialize dataNodes ...
+19:09:56,304 INFO  netoHbDn:0 init success
+19:09:56,337 INFO  infDb[2]:0 init success
+19:09:56,393 INFO  netDb[10]:0 init success
+19:09:56,437 INFO  infDb[6]:0 init success
+19:09:56,484 INFO  infDb[4]:0 init success
+19:09:56,532 INFO  netDb[0]:0 init success
+19:09:56,575 INFO  infDb[0]:0 init success
+19:09:56,612 INFO  netDb[4]:0 init success
+19:09:56,658 INFO  netDb[6]:0 init success
+19:09:56,696 INFO  netDb[9]:0 init success
+19:09:56,728 INFO  netDb[8]:0 init success
+19:09:56,765 INFO  netDb[2]:0 init success
+19:09:56,815 INFO  infDb[10]:0 init success
+19:09:56,856 INFO  infDb[7]:0 init success
+19:09:56,900 INFO  netoScDn:0 init success
+19:09:56,938 INFO  infDb[9]:0 init success
+19:09:56,963 INFO  basicdDataDn:0 init success
+19:09:56,998 INFO  netDb[11]:0 init success
+19:09:57,033 INFO  infDb[1]:0 init success
+19:09:57,065 INFO  infDb[3]:0 init success
+19:09:57,107 INFO  infDb[5]:0 init success
+19:09:57,146 INFO  netDb[3]:0 init success
+19:09:57,189 INFO  netDb[1]:0 init success
+19:09:57,229 INFO  netDb[7]:0 init success
+19:09:57,273 INFO  infDb[8]:0 init success
+19:09:57,306 INFO  infDb[11]:0 init success
+19:09:57,343 INFO  netDb[5]:0 init success
+19:09:57,524 INFO  CobarManager is started and listening on 9066
+19:09:57,553 INFO  CobarServer is started and listening on 8066
+19:09:57,554 INFO  ===============================================
+19:09:58,357 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=63665,schema=infdb]'net' login success
+19:10:53,692 INFO  [thread=Processor2-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=63787,schema=infdb]'net' login success
+19:13:09,046 INFO  [thread=Processor3-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64090,schema=infdb]'net' login success
+19:13:16,580 INFO  [thread=Processor0-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64109,schema=infdb]'net' login success
+19:13:17,458 INFO  [thread=Processor1-H2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64113,schema=infdb]'net' login success
+19:13:24,998 INFO  [thread=Processor2-H2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64129,schema=infdb]'net' login success
+19:16:56,335 INFO  [thread=Processor3-H2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64615,schema=infdb]'net' login success
+19:17:14,985 INFO  ===============================================
+19:17:14,993 INFO  Cobar is ready to startup ...
+19:17:14,994 INFO  Startup processors ...
+19:17:15,425 INFO  Startup connector ...
+19:17:15,470 INFO  Initialize dataNodes ...
+19:17:15,798 INFO  netoHbDn:0 init success
+19:17:15,847 INFO  infDb[2]:0 init success
+19:17:15,872 INFO  netDb[10]:0 init success
+19:17:15,903 INFO  infDb[6]:0 init success
+19:17:15,947 INFO  infDb[4]:0 init success
+19:17:15,983 INFO  netDb[0]:0 init success
+19:17:16,013 INFO  infDb[0]:0 init success
+19:17:16,056 INFO  netDb[4]:0 init success
+19:17:16,081 INFO  netDb[6]:0 init success
+19:17:16,109 INFO  netDb[9]:0 init success
+19:17:16,153 INFO  netDb[8]:0 init success
+19:17:16,182 INFO  netDb[2]:0 init success
+19:17:16,217 INFO  infDb[10]:0 init success
+19:17:16,275 INFO  infDb[7]:0 init success
+19:17:16,310 INFO  netoScDn:0 init success
+19:17:16,352 INFO  infDb[9]:0 init success
+19:17:16,379 INFO  basicdDataDn:0 init success
+19:17:16,408 INFO  netDb[11]:0 init success
+19:17:16,456 INFO  infDb[1]:0 init success
+19:17:16,489 INFO  infDb[3]:0 init success
+19:17:16,517 INFO  infDb[5]:0 init success
+19:17:16,555 INFO  netDb[3]:0 init success
+19:17:16,584 INFO  netDb[1]:0 init success
+19:17:16,610 INFO  netDb[7]:0 init success
+19:17:16,642 INFO  infDb[8]:0 init success
+19:17:16,681 INFO  infDb[11]:0 init success
+19:17:16,707 INFO  netDb[5]:0 init success
+19:17:16,854 INFO  CobarManager is started and listening on 9066
+19:17:16,882 INFO  CobarServer is started and listening on 8066
+19:17:16,882 INFO  ===============================================
+19:17:17,403 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64745,schema=infdb]'net' login success
+19:17:19,485 INFO  [thread=Processor2-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64750,schema=infdb]'net' login success
+19:17:20,430 INFO  [thread=Processor3-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64753,schema=infdb]'net' login success
+19:17:21,139 INFO  [thread=Processor0-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64756,schema=infdb]'net' login success
+19:17:21,805 INFO  [thread=Processor1-H2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64758,schema=infdb]'net' login success
+19:17:22,724 INFO  [thread=Processor2-H2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64761,schema=infdb]'net' login success
+19:21:28,176 INFO  [thread=Processor3-H2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=65309,schema=infdb]'net' login success

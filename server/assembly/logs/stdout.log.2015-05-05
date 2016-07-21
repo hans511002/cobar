@@ -1,0 +1,803 @@
+09:53:13,363 INFO  ===============================================
+09:53:13,375 INFO  Cobar is ready to startup ...
+09:53:13,376 INFO  Startup processors ...
+09:53:13,848 INFO  Startup connector ...
+09:53:13,884 INFO  Initialize dataNodes ...
+09:53:14,336 INFO  netoHbDn:0 init success
+09:53:14,387 INFO  infDb[2]:0 init success
+09:53:14,413 INFO  netDb[10]:0 init success
+09:53:14,464 INFO  infDb[6]:0 init success
+09:53:14,514 INFO  infDb[4]:0 init success
+09:53:14,556 INFO  netDb[0]:0 init success
+09:53:14,609 INFO  infDb[0]:0 init success
+09:53:14,691 INFO  netDb[4]:0 init success
+09:53:14,739 INFO  netDb[6]:0 init success
+09:53:14,825 INFO  netDb[9]:0 init success
+09:53:14,883 INFO  netDb[8]:0 init success
+09:53:14,937 INFO  netDb[2]:0 init success
+09:53:15,046 INFO  infDb[10]:0 init success
+09:53:15,118 INFO  infDb[7]:0 init success
+09:53:15,224 INFO  netoScDn:0 init success
+09:53:15,283 INFO  infDb[9]:0 init success
+09:53:15,383 INFO  basicdDataDn:0 init success
+09:53:15,479 INFO  netDb[11]:0 init success
+09:53:15,569 INFO  infDb[1]:0 init success
+09:53:15,794 INFO  infDb[3]:0 init success
+09:53:16,008 INFO  infDb[5]:0 init success
+09:53:16,139 INFO  netDb[3]:0 init success
+09:53:16,257 INFO  netDb[1]:0 init success
+09:53:16,378 INFO  netDb[7]:0 init success
+09:53:16,486 INFO  infDb[8]:0 init success
+09:53:16,617 INFO  infDb[11]:0 init success
+09:53:16,669 INFO  netDb[5]:0 init success
+09:53:16,856 INFO  CobarManager is started and listening on 9066
+09:53:16,956 INFO  CobarServer is started and listening on 8066
+09:53:16,956 INFO  ===============================================
+09:53:37,000 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55005,schema=infdb]'net' login success
+09:55:26,981 WARN  
+ MSG:Table 'infdb.cdl_a' doesn't exist
+ ROUTE:[thread=Processor1-E1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55005,schema=infdb] -> [host=133.37.31.53,port=3306,schema=infdb]
+ SQL: insert into cdl_a values(1)
+09:56:05,391 WARN  
+ MSG:Table 'infdb.cdl_a' doesn't exist
+ ROUTE:[thread=Processor1-E0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55005,schema=infdb] -> [host=133.37.31.53,port=3306,schema=infdb]
+ SQL: insert into cdl_a values(1)
+09:58:12,746 WARN  
+ MSG:Table 'infdb.cdl_a' doesn't exist
+ ROUTE:[thread=Processor1-E0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55005,schema=infdb] -> [host=133.37.31.52,port=3306,schema=infdb]
+ SQL: insert into cdl_a values(1)
+09:59:54,681 INFO  ===============================================
+09:59:54,685 INFO  Cobar is ready to startup ...
+09:59:54,685 INFO  Startup processors ...
+09:59:55,112 INFO  Startup connector ...
+09:59:55,154 INFO  Initialize dataNodes ...
+09:59:55,435 INFO  netoHbDn:0 init success
+09:59:55,464 INFO  infDb[2]:0 init success
+09:59:55,513 INFO  netDb[10]:0 init success
+09:59:55,559 INFO  infDb[6]:0 init success
+09:59:55,595 INFO  infDb[4]:0 init success
+09:59:55,629 INFO  netDb[0]:0 init success
+09:59:55,659 INFO  infDb[0]:0 init success
+09:59:55,718 INFO  netDb[4]:0 init success
+09:59:55,856 INFO  netDb[6]:0 init success
+09:59:56,033 INFO  netDb[9]:0 init success
+09:59:56,164 INFO  netDb[8]:0 init success
+09:59:56,238 INFO  netDb[2]:0 init success
+09:59:56,285 INFO  infDb[10]:0 init success
+09:59:56,362 INFO  infDb[7]:0 init success
+09:59:56,433 INFO  netoScDn:0 init success
+09:59:56,466 INFO  infDb[9]:0 init success
+09:59:56,520 INFO  basicdDataDn:0 init success
+09:59:56,612 INFO  netDb[11]:0 init success
+09:59:56,688 INFO  infDb[1]:0 init success
+09:59:56,776 INFO  infDb[3]:0 init success
+09:59:56,892 INFO  infDb[5]:0 init success
+09:59:56,984 INFO  netDb[3]:0 init success
+09:59:57,058 INFO  netDb[1]:0 init success
+09:59:57,133 INFO  netDb[7]:0 init success
+09:59:57,200 INFO  infDb[8]:0 init success
+09:59:57,287 INFO  infDb[11]:0 init success
+09:59:57,362 INFO  netDb[5]:0 init success
+09:59:57,526 INFO  CobarManager is started and listening on 9066
+09:59:57,601 INFO  CobarServer is started and listening on 8066
+09:59:57,601 INFO  ===============================================
+09:59:58,358 INFO  [thread=Processor1-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55178,schema=infdb]'net' login success
+10:00:13,680 WARN  
+ MSG:Column count doesn't match value count at row 1
+ ROUTE:[thread=Processor1-E1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55178,schema=infdb] -> [host=133.37.31.51,port=3306,schema=infdb]
+ SQL: insert into cdl_a values(1)
+10:01:37,344 WARN  
+ MSG:Column count doesn't match value count at row 1
+ ROUTE:[thread=Processor1-E3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55178,schema=infdb] -> [host=133.37.31.51,port=3306,schema=infdb]
+ SQL: insert into cdl_a values(1)
+10:06:27,560 WARN  [thread=Processor1-E2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55178,schema=infdb]infDb[0].1{ insert into cdl_a values(1)}
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at com.alibaba.cobar.mysql.MySQLDataNode.getChannel(MySQLDataNode.java:185)
+	at com.alibaba.cobar.mysql.bio.executor.SingleNodeExecutor$2.run(SingleNodeExecutor.java:141)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+10:06:46,340 INFO  [thread=Processor2-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55349,schema=netdb]'net' login success
+10:06:51,623 WARN  
+ MSG:Table 'netdb56.cdl_a' doesn't exist
+ ROUTE:[thread=Processor2-E0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55349,schema=netdb] -> [host=133.37.31.51,port=3306,schema=netdb56]
+ SQL: insert into cdl_a values(1)
+10:07:20,854 WARN  
+ MSG:Table 'netdb56.netmag_user' doesn't exist
+ ROUTE:[thread=Processor2-E3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55349,schema=netdb] -> [host=133.37.31.51,port=3306,schema=netdb56]
+ SQL: insert into netmag_user values(1)
+10:07:34,215 WARN  
+ MSG:Table 'netdb51.netmag_user' doesn't exist
+ ROUTE:[thread=Processor2-E1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55349,schema=netdb] -> [host=133.37.31.51,port=3306,schema=netdb51]
+ SQL: insert into netmag_user values(1)
+10:07:41,855 WARN  
+ MSG:Table 'netdb56.net_mag_user' doesn't exist
+ ROUTE:[thread=Processor2-E3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55349,schema=netdb] -> [host=133.37.31.51,port=3306,schema=netdb56]
+ SQL: insert into net_mag_user values(1)
+10:08:37,638 WARN  
+ MSG:Table 'netdb56.net_mag_user' doesn't exist
+ ROUTE:[thread=Processor2-E3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55349,schema=netdb] -> [host=133.37.31.51,port=3306,schema=netdb56]
+ SQL: insert into net_mag_user values(1)
+10:21:41,238 WARN  com.alibaba.cobar.heartbeat.CobarDetector@eb90d8
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:21:42,282 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1ad6d84
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:43,328 WARN  com.alibaba.cobar.heartbeat.CobarDetector@5a6d70
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:43,409 WARN  com.alibaba.cobar.heartbeat.CobarDetector@11c2c15
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:21:44,388 WARN  com.alibaba.cobar.heartbeat.CobarDetector@7ba30c
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:44,450 WARN  com.alibaba.cobar.heartbeat.CobarDetector@189d449
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:45,584 WARN  com.alibaba.cobar.heartbeat.CobarDetector@17506de
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:45,589 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1e674d4
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:45,589 ERROR #!Cobar#[name=cobar1,host=133.37.31.51,port=8066,reason=ERROR]
+10:21:46,640 WARN  com.alibaba.cobar.heartbeat.CobarDetector@3ae66c
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:47,730 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1242048
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:47,731 ERROR #!Cobar#[name=cobar2,host=133.37.31.52,port=8066,reason=ERROR]
+10:21:49,243 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1d144f2
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:49,249 WARN  com.alibaba.cobar.heartbeat.CobarDetector@752c50
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:50,274 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1297549
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:50,290 WARN  com.alibaba.cobar.heartbeat.CobarDetector@90b8b9
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:51,345 WARN  com.alibaba.cobar.heartbeat.CobarDetector@20478a
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:51,350 WARN  com.alibaba.cobar.heartbeat.CobarDetector@16525f7
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:52,375 WARN  com.alibaba.cobar.heartbeat.CobarDetector@289d8f
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:52,387 WARN  com.alibaba.cobar.heartbeat.CobarDetector@d4fb47
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:53,413 WARN  com.alibaba.cobar.heartbeat.CobarDetector@12bafe4
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:53,414 ERROR #!Cobar#[name=cobar1,host=133.37.31.51,port=8066,reason=ERROR]
+10:21:53,452 WARN  com.alibaba.cobar.heartbeat.CobarDetector@14d583a
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:53,453 ERROR #!Cobar#[name=cobar2,host=133.37.31.52,port=8066,reason=ERROR]
+10:21:59,252 WARN  com.alibaba.cobar.heartbeat.CobarDetector@75de1c
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:21:59,257 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1e876ae
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:00,322 WARN  com.alibaba.cobar.heartbeat.CobarDetector@9b9b81
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:00,329 WARN  com.alibaba.cobar.heartbeat.CobarDetector@96ac5e
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:01,377 WARN  com.alibaba.cobar.heartbeat.CobarDetector@75bb62
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:01,481 WARN  com.alibaba.cobar.heartbeat.CobarDetector@367c17
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:02,547 WARN  com.alibaba.cobar.heartbeat.CobarDetector@783df
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:02,552 WARN  com.alibaba.cobar.heartbeat.CobarDetector@145fed7
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:03,603 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1da1a47
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:03,604 ERROR #!Cobar#[name=cobar2,host=133.37.31.52,port=8066,reason=ERROR]
+10:22:03,616 WARN  com.alibaba.cobar.heartbeat.CobarDetector@65e175
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:03,617 ERROR #!Cobar#[name=cobar1,host=133.37.31.51,port=8066,reason=ERROR]
+10:22:09,293 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1b70371
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:09,298 WARN  com.alibaba.cobar.heartbeat.CobarDetector@469173
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:10,333 WARN  com.alibaba.cobar.heartbeat.CobarDetector@101812b
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:10,474 WARN  com.alibaba.cobar.heartbeat.CobarDetector@13442f1
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:11,414 WARN  com.alibaba.cobar.heartbeat.CobarDetector@174e14
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:11,535 WARN  com.alibaba.cobar.heartbeat.CobarDetector@4504dd
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:12,450 WARN  com.alibaba.cobar.heartbeat.CobarDetector@a0f411
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:12,554 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1938886
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:13,515 WARN  com.alibaba.cobar.heartbeat.CobarDetector@16eb78b
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:13,516 ERROR #!Cobar#[name=cobar2,host=133.37.31.52,port=8066,reason=ERROR]
+10:22:13,591 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1fbc252
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:13,592 ERROR #!Cobar#[name=cobar1,host=133.37.31.51,port=8066,reason=ERROR]
+10:22:19,236 WARN  com.alibaba.cobar.heartbeat.CobarDetector@52728a
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:19,248 WARN  com.alibaba.cobar.heartbeat.CobarDetector@14a74b1
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:20,260 WARN  com.alibaba.cobar.heartbeat.CobarDetector@47808b
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:20,341 WARN  com.alibaba.cobar.heartbeat.CobarDetector@a47bf9
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:21,301 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1da1fb8
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:21,381 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1731eba
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:22,368 WARN  com.alibaba.cobar.heartbeat.CobarDetector@6647cb
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:22,440 WARN  com.alibaba.cobar.heartbeat.CobarDetector@dd8bec
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:23,424 WARN  com.alibaba.cobar.heartbeat.CobarDetector@84706
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:23,425 ERROR #!Cobar#[name=cobar1,host=133.37.31.51,port=8066,reason=ERROR]
+10:22:23,487 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1526cd9
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:23,487 ERROR #!Cobar#[name=cobar2,host=133.37.31.52,port=8066,reason=ERROR]
+10:22:29,215 WARN  com.alibaba.cobar.heartbeat.CobarDetector@11bd60e
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:29,269 WARN  com.alibaba.cobar.heartbeat.CobarDetector@165e7a5
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:30,291 WARN  com.alibaba.cobar.heartbeat.CobarDetector@18f67d0
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:30,296 WARN  com.alibaba.cobar.heartbeat.CobarDetector@10fcd4
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:31,414 WARN  com.alibaba.cobar.heartbeat.CobarDetector@fb6e3e
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:31,504 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1a3a9db
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:32,547 WARN  com.alibaba.cobar.heartbeat.CobarDetector@dd9e3e
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:32,552 WARN  com.alibaba.cobar.heartbeat.CobarDetector@c13917
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:33,610 WARN  com.alibaba.cobar.heartbeat.CobarDetector@12ebb84
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:33,611 ERROR #!Cobar#[name=cobar2,host=133.37.31.52,port=8066,reason=ERROR]
+10:22:33,613 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1d0e2d2
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:33,613 ERROR #!Cobar#[name=cobar1,host=133.37.31.51,port=8066,reason=ERROR]
+10:22:39,216 WARN  com.alibaba.cobar.heartbeat.CobarDetector@140022f
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:39,234 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1e4f1ec
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:40,307 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1c3cbc4
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:41,345 WARN  com.alibaba.cobar.heartbeat.CobarDetector@14003fc
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:42,886 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1e731c
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:22:43,936 WARN  com.alibaba.cobar.heartbeat.CobarDetector@d6a133
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:45,296 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1fc9a67
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:22:46,371 WARN  com.alibaba.cobar.heartbeat.CobarDetector@36c8f3
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:47,810 WARN  com.alibaba.cobar.heartbeat.CobarDetector@c412dd
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:22:48,869 WARN  com.alibaba.cobar.heartbeat.CobarDetector@19eb196
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:52,571 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1fe0603
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:22:53,647 WARN  com.alibaba.cobar.heartbeat.CobarDetector@98b95b
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:54,904 WARN  com.alibaba.cobar.heartbeat.CobarDetector@b63f05
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:22:55,943 WARN  com.alibaba.cobar.heartbeat.CobarDetector@17dd585
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:57,211 WARN  com.alibaba.cobar.heartbeat.CobarDetector@53f43e
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:22:58,259 WARN  com.alibaba.cobar.heartbeat.CobarDetector@430f4
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:22:59,542 WARN  com.alibaba.cobar.heartbeat.CobarDetector@147b78e
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:23:00,684 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1203b65
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:23:01,910 WARN  com.alibaba.cobar.heartbeat.CobarDetector@715157
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:23:02,976 WARN  com.alibaba.cobar.heartbeat.CobarDetector@1366e7d
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:23:04,253 WARN  com.alibaba.cobar.heartbeat.CobarDetector@17ef41c
+java.io.EOFException
+	at com.alibaba.cobar.net.AbstractConnection.read(AbstractConnection.java:163)
+	at com.alibaba.cobar.net.NIOReactor$R.read(NIOReactor.java:130)
+	at com.alibaba.cobar.net.NIOReactor$R.run(NIOReactor.java:98)
+	at java.lang.Thread.run(Thread.java:744)
+10:23:05,309 WARN  com.alibaba.cobar.heartbeat.CobarDetector@e2f0e2
+java.net.ConnectException: Connection refused: no further information
+	at sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:735)
+	at com.alibaba.cobar.net.BackendConnection.finishConnect(BackendConnection.java:100)
+	at com.alibaba.cobar.net.NIOConnector.finishConnect(NIOConnector.java:104)
+	at com.alibaba.cobar.net.NIOConnector.run(NIOConnector.java:76)
+10:23:20,390 WARN  
+ MSG:Table 'netdb56.net_mag_user' doesn't exist
+ ROUTE:[thread=Processor2-E2,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=55349,schema=netdb] -> [host=133.37.31.51,port=3306,schema=netdb56]
+ SQL: insert into net_mag_user values(1)
+10:23:42,246 INFO  [thread=ManagerExecutor0,class=ManagerConnection,host=0:0:0:0:0:0:0:1,port=64365,schema=null]'net' login success
+10:23:42,777 INFO  netoHbDn:0 init success
+10:23:42,902 INFO  infDb[2]:0 init success
+10:23:43,012 INFO  netDb[10]:0 init success
+10:23:43,088 INFO  infDb[6]:0 init success
+10:23:43,190 INFO  infDb[4]:0 init success
+10:23:43,257 INFO  netDb[0]:0 init success
+10:23:43,343 INFO  infDb[0]:0 init success
+10:23:43,426 INFO  netDb[4]:0 init success
+10:23:43,518 INFO  netDb[6]:0 init success
+10:23:43,572 INFO  netDb[9]:0 init success
+10:23:43,706 INFO  netDb[8]:0 init success
+10:23:43,954 INFO  netDb[2]:0 init success
+10:23:44,032 INFO  infDb[10]:0 init success
+10:23:44,121 INFO  infDb[7]:0 init success
+10:23:44,182 INFO  netoScDn:0 init success
+10:23:44,271 INFO  infDb[9]:0 init success
+10:23:44,349 INFO  basicdDataDn:0 init success
+10:23:44,445 INFO  netDb[11]:0 init success
+10:23:44,490 INFO  infDb[1]:0 init success
+10:23:44,592 INFO  infDb[3]:0 init success
+10:23:44,708 INFO  infDb[5]:0 init success
+10:23:44,805 INFO  netDb[3]:0 init success
+10:23:44,876 INFO  netDb[1]:0 init success
+10:23:44,960 INFO  netDb[7]:0 init success
+10:23:45,031 INFO  infDb[8]:0 init success
+10:23:45,120 INFO  infDb[11]:0 init success
+10:23:45,199 INFO  netDb[5]:0 init success
+10:23:45,208 WARN  [thread=ManagerExecutor2,class=ManagerConnection,host=0:0:0:0:0:0:0:1,port=64365,schema=null]Reload config success by manager
+10:23:47,259 INFO  [thread=Processor3-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64394,schema=netdb]'net' login success
+10:23:49,751 WARN  [thread=Processor3-E3,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64394,schema=netdb]netDb[0].1{ insert into net_mag_user values(1)}
+java.util.concurrent.ExecutionException: com.alibaba.cobar.exception.ErrorPacketException: Unknown database 'netdb51'
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:202)
+	at com.alibaba.cobar.mysql.bio.MySQLChannel.connect(MySQLChannel.java:190)
+	at com.alibaba.cobar.mysql.MySQLDataSource.getChannel(MySQLDataSource.java:159)
+	at com.alibaba.cobar.mysql.MySQLDataNode.getChannel(MySQLDataNode.java:185)
+	at com.alibaba.cobar.mysql.bio.executor.SingleNodeExecutor$2.run(SingleNodeExecutor.java:141)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: com.alibaba.cobar.exception.ErrorPacketException: Unknown database 'netdb51'
+	at com.alibaba.cobar.mysql.bio.MySQLChannel.handshake(MySQLChannel.java:357)
+	at com.alibaba.cobar.mysql.bio.MySQLChannel.access$0(MySQLChannel.java:326)
+	at com.alibaba.cobar.mysql.bio.MySQLChannel$1.call(MySQLChannel.java:185)
+	at com.alibaba.cobar.mysql.bio.MySQLChannel$1.call(MySQLChannel.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	... 3 more
+10:26:58,596 WARN  [thread=Processor3-E1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64394,schema=netdb]netDb[0].1{ insert into net_mag_user values(1)}
+java.util.concurrent.ExecutionException: com.alibaba.cobar.exception.ErrorPacketException: Unknown database 'netdb51'
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:202)
+	at com.alibaba.cobar.mysql.bio.MySQLChannel.connect(MySQLChannel.java:190)
+	at com.alibaba.cobar.mysql.MySQLDataSource.getChannel(MySQLDataSource.java:159)
+	at com.alibaba.cobar.mysql.MySQLDataNode.getChannel(MySQLDataNode.java:185)
+	at com.alibaba.cobar.mysql.bio.executor.SingleNodeExecutor$2.run(SingleNodeExecutor.java:141)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: com.alibaba.cobar.exception.ErrorPacketException: Unknown database 'netdb51'
+	at com.alibaba.cobar.mysql.bio.MySQLChannel.handshake(MySQLChannel.java:357)
+	at com.alibaba.cobar.mysql.bio.MySQLChannel.access$0(MySQLChannel.java:326)
+	at com.alibaba.cobar.mysql.bio.MySQLChannel$1.call(MySQLChannel.java:185)
+	at com.alibaba.cobar.mysql.bio.MySQLChannel$1.call(MySQLChannel.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	... 3 more
+10:29:51,184 INFO  [thread=ManagerExecutor0,class=ManagerConnection,host=0:0:0:0:0:0:0:1,port=64569,schema=null]'net' login success
+10:29:51,477 INFO  netoHbDn:0 init success
+10:29:51,522 INFO  infDb[2]:0 init success
+10:29:51,605 INFO  netDb[10]:0 init success
+10:29:51,638 INFO  infDb[6]:0 init success
+10:29:51,747 INFO  infDb[4]:0 init success
+10:29:51,799 INFO  netDb[0]:0 init success
+10:29:51,838 INFO  infDb[0]:0 init success
+10:29:51,932 INFO  netDb[4]:0 init success
+10:29:51,997 INFO  netDb[6]:0 init success
+10:29:52,039 INFO  netDb[9]:0 init success
+10:29:52,124 INFO  netDb[8]:0 init success
+10:29:52,192 INFO  netDb[2]:0 init success
+10:29:52,226 INFO  infDb[10]:0 init success
+10:29:52,332 INFO  infDb[7]:0 init success
+10:29:52,400 INFO  netoScDn:0 init success
+10:29:52,451 INFO  infDb[9]:0 init success
+10:29:52,519 INFO  basicdDataDn:0 init success
+10:29:52,565 INFO  netDb[11]:0 init success
+10:29:52,662 INFO  infDb[1]:0 init success
+10:29:52,726 INFO  infDb[3]:0 init success
+10:29:52,763 INFO  infDb[5]:0 init success
+10:29:52,817 INFO  netDb[3]:0 init success
+10:29:52,895 INFO  netDb[1]:0 init success
+10:29:52,931 INFO  netDb[7]:0 init success
+10:29:52,980 INFO  infDb[8]:0 init success
+10:29:53,064 INFO  infDb[11]:0 init success
+10:29:53,111 INFO  netDb[5]:0 init success
+10:29:53,143 WARN  [thread=ManagerExecutor2,class=ManagerConnection,host=0:0:0:0:0:0:0:1,port=64569,schema=null]Reload config success by manager
+10:30:01,830 INFO  [thread=Processor0-H0,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64640,schema=netdb]'net' login success
+10:50:27,785 ERROR #!DN_SWITCH#[name=netoHbDn,result=[0->1],reason=TIMEOUT]
+10:50:27,788 ERROR #!DN_SWITCH#[name=netoScDn,result=[0->1],reason=TIMEOUT]
+10:50:27,788 ERROR #!DN_SWITCH#[name=basicdDataDn,result=[0->1],reason=TIMEOUT]
+10:50:27,789 ERROR #!DN_SWITCH#[name=netDb[5],result=[0->1],reason=TIMEOUT]
+11:39:38,893 WARN  
+ MSG:CAL0009: Drop table failed due to  IDB-2006: 'netdb56.cdl_cdt_1x_pp_basic' does not exist in InfiniDB.  
+ ROUTE:[thread=Processor0-E1,class=ServerConnection,host=0:0:0:0:0:0:0:1,port=64640,schema=netdb] -> [host=133.37.31.51,port=3306,schema=netdb56]
+ SQL:drop table if exists cdl_cdt_1x_pp_basic
