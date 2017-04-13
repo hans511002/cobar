@@ -93,6 +93,11 @@ public final class ServerRouter {
 
 	public static RouteResultset route(SchemaConfig schema, String stmt, String charset, ServerConnection info)
 			throws SQLNonTransientException {
+		return route(schema, stmt, charset, info, -1);
+	}
+
+	public static RouteResultset route(SchemaConfig schema, String stmt, String charset, ServerConnection info, int type)
+			throws SQLNonTransientException {
 		info.setSQLAttr(null, null);
 		RouteResultset rrs = new RouteResultset(stmt);
 		info.setTableConfig(null);
@@ -103,7 +108,6 @@ public final class ServerRouter {
 			// info.checkTableComData(rrs, rrs.getNodes()[0].getStatement(), null, null);//放到路由函数内，可能会减少一次SQL解析
 			return rrs;
 		}
-
 		// 检查schema是否含有拆分库
 		if (schema.isNoSharding()) {
 			if (schema.isKeepSqlSchema()) {
@@ -117,7 +121,7 @@ public final class ServerRouter {
 				}
 			}
 			RouteResultsetNode[] nodes = new RouteResultsetNode[1];
-			nodes[0] = new RouteResultsetNode(schema.getDataNode(), stmt);
+			nodes[0] = new RouteResultsetNode(schema.getDataNode(), stmt, schema, null, type);
 			rrs.setNodes(nodes);
 			return rrs;
 		}
@@ -137,13 +141,14 @@ public final class ServerRouter {
 			ast = comPlugn.getAst();
 			visitor = comPlugn.getVisitor();
 		}
+
 		// 如果sql包含用户自定义的schema，则路由到default节点
 		if (schema.isKeepSqlSchema() && visitor.isCustomedSchema()) {
 			if (visitor.isSchemaTrimmed()) {
 				stmt = genSQL(ast, stmt);
 			}
 			RouteResultsetNode[] nodes = new RouteResultsetNode[1];
-			nodes[0] = new RouteResultsetNode(schema.getDataNode(), stmt);
+			nodes[0] = new RouteResultsetNode(schema.getDataNode(), stmt, schema, null, type);
 			rrs.setNodes(nodes);
 			return rrs;
 		}
@@ -199,9 +204,9 @@ public final class ServerRouter {
 			String sql = visitor.isSchemaTrimmed() ? genSQL(ast, stmt) : stmt;
 			RouteResultsetNode[] rn = new RouteResultsetNode[1];
 			if ("".equals(schema.getDataNode()) && isSystemReadSQL(ast)) {
-				rn[0] = new RouteResultsetNode(schema.getRandomDataNode(), sql);
+				rn[0] = new RouteResultsetNode(schema.getRandomDataNode(), sql, schema, matchedTable, type);
 			} else {
-				rn[0] = new RouteResultsetNode(schema.getDataNode(), sql);
+				rn[0] = new RouteResultsetNode(schema.getDataNode(), sql, schema, matchedTable, type);
 			}
 			rrs.setNodes(rn);
 			return rrs;
@@ -215,7 +220,7 @@ public final class ServerRouter {
 			String sql = visitor.isSchemaTrimmed() ? genSQL(ast, stmt) : stmt;
 			RouteResultsetNode[] rn = new RouteResultsetNode[dataNodes.length];
 			for (int i = 0; i < dataNodes.length; ++i) {
-				rn[i] = new RouteResultsetNode(dataNodes[i], sql);
+				rn[i] = new RouteResultsetNode(dataNodes[i], sql, schema, matchedTable, type);
 			}
 			rrs.setNodes(rn);
 			setGroupFlagAndLimit(rrs, visitor);
@@ -235,7 +240,7 @@ public final class ServerRouter {
 			String dataNode = matchedTable.getDataNodes()[dnMap.keySet().iterator().next()];
 			String sql = visitor.isSchemaTrimmed() ? genSQL(ast, stmt) : stmt;
 			RouteResultsetNode[] rn = new RouteResultsetNode[1];
-			rn[0] = new RouteResultsetNode(dataNode, sql);
+			rn[0] = new RouteResultsetNode(dataNode, sql, schema, matchedTable, type);
 			rrs.setNodes(rn);
 		} else {
 			RouteResultsetNode[] rn = new RouteResultsetNode[dnMap.size()];

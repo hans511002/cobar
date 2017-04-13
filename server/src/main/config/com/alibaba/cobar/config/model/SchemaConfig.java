@@ -40,9 +40,11 @@ public class SchemaConfig {
 	private final boolean keepSqlSchema;
 	private final Set<String> allDataNodes;
 	private final boolean returnDN;
+	private final int writeIndex;
+	private final boolean openRWSep;
 
 	public SchemaConfig(String name, String dataNode, String group, boolean keepSqlSchema, boolean isReturnDN,
-			Map<String, TableConfig> tables) {
+			int writeIndex, boolean openRWSep, Map<String, TableConfig> tables) {
 		this.name = name;
 		this.dataNode = dataNode;
 		this.group = group;
@@ -57,6 +59,16 @@ public class SchemaConfig {
 		this.allDataNodes = buildAllDataNodes();
 		this.keepSqlSchema = keepSqlSchema;
 		this.returnDN = isReturnDN;
+		this.writeIndex = writeIndex;
+		this.openRWSep = openRWSep;
+	}
+
+	public boolean isOpenRWSep() {
+		return openRWSep;
+	}
+
+	public int getWriteIndex() {
+		return writeIndex;
 	}
 
 	public boolean isKeepSqlSchema() {

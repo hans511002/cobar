@@ -51,138 +51,144 @@ import com.alibaba.cobar.util.TimeUtil;
  */
 public final class ShowDataNode {
 
-    private static final NumberFormat nf = DecimalFormat.getInstance();
-    private static final int FIELD_COUNT = 12;
-    private static final ResultSetHeaderPacket header = PacketUtil.getHeader(FIELD_COUNT);
-    private static final FieldPacket[] fields = new FieldPacket[FIELD_COUNT];
-    private static final EOFPacket eof = new EOFPacket();
-    static {
-        nf.setMaximumFractionDigits(3);
+	private static final NumberFormat nf = DecimalFormat.getInstance();
+	private static final int FIELD_COUNT = 12;
+	private static final ResultSetHeaderPacket header = PacketUtil.getHeader(FIELD_COUNT);
+	private static final FieldPacket[] fields = new FieldPacket[FIELD_COUNT];
+	private static final EOFPacket eof = new EOFPacket();
+	static {
+		nf.setMaximumFractionDigits(3);
 
-        int i = 0;
-        byte packetId = 0;
-        header.packetId = ++packetId;
+		int i = 0;
+		byte packetId = 0;
+		header.packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("NAME", Fields.FIELD_TYPE_VAR_STRING);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("NAME", Fields.FIELD_TYPE_VAR_STRING);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("DATASOURCES", Fields.FIELD_TYPE_VAR_STRING);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("DATASOURCES", Fields.FIELD_TYPE_VAR_STRING);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("INDEX", Fields.FIELD_TYPE_LONG);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("INDEX", Fields.FIELD_TYPE_LONG);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("TYPE", Fields.FIELD_TYPE_VAR_STRING);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("TYPE", Fields.FIELD_TYPE_VAR_STRING);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("ACTIVE", Fields.FIELD_TYPE_LONG);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("ACTIVE", Fields.FIELD_TYPE_LONG);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("IDLE", Fields.FIELD_TYPE_LONG);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("IDLE", Fields.FIELD_TYPE_LONG);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("SIZE", Fields.FIELD_TYPE_LONG);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("SIZE", Fields.FIELD_TYPE_LONG);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("EXECUTE", Fields.FIELD_TYPE_LONGLONG);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("EXECUTE", Fields.FIELD_TYPE_LONGLONG);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("TOTAL_TIME", Fields.FIELD_TYPE_DOUBLE);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("TOTAL_TIME", Fields.FIELD_TYPE_DOUBLE);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("MAX_TIME", Fields.FIELD_TYPE_DOUBLE);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("MAX_TIME", Fields.FIELD_TYPE_DOUBLE);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("MAX_SQL", Fields.FIELD_TYPE_LONGLONG);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("MAX_SQL", Fields.FIELD_TYPE_LONGLONG);
+		fields[i++].packetId = ++packetId;
 
-        fields[i] = PacketUtil.getField("RECOVERY_TIME", Fields.FIELD_TYPE_LONGLONG);
-        fields[i++].packetId = ++packetId;
+		fields[i] = PacketUtil.getField("RECOVERY_TIME", Fields.FIELD_TYPE_LONGLONG);
+		fields[i++].packetId = ++packetId;
 
-        eof.packetId = ++packetId;
-    }
+		eof.packetId = ++packetId;
+	}
 
-    public static void execute(ManagerConnection c, String name) {
-        ByteBuffer buffer = c.allocate();
+	public static void execute(ManagerConnection c, String name) {
+		ByteBuffer buffer = c.allocate();
 
-        // write header
-        buffer = header.write(buffer, c);
+		// write header
+		buffer = header.write(buffer, c);
 
-        // write fields
-        for (FieldPacket field : fields) {
-            buffer = field.write(buffer, c);
-        }
+		// write fields
+		for (FieldPacket field : fields) {
+			buffer = field.write(buffer, c);
+		}
 
-        // write eof
-        buffer = eof.write(buffer, c);
+		// write eof
+		buffer = eof.write(buffer, c);
 
-        // write rows
-        byte packetId = eof.packetId;
-        CobarConfig conf = CobarServer.getInstance().getConfig();
-        Map<String, MySQLDataNode> dataNodes = conf.getDataNodes();
-        List<String> keys = new ArrayList<String>();
-        if (StringUtil.isEmpty(name)) {
-            keys.addAll(dataNodes.keySet());
-        } else {
-            SchemaConfig sc = conf.getSchemas().get(name);
-            if (null != sc) {
-                keys.addAll(sc.getAllDataNodes());
-            }
-        }
-        Collections.sort(keys, new Comparators<String>());
-        for (String key : keys) {
-            RowDataPacket row = getRow(dataNodes.get(key), c.getCharset());
-            row.packetId = ++packetId;
-            buffer = row.write(buffer, c);
-        }
+		// write rows
+		byte packetId = eof.packetId;
+		CobarConfig conf = CobarServer.getInstance().getConfig();
+		Map<String, MySQLDataNode> dataNodes = conf.getDataNodes();
+		List<String> keys = new ArrayList<String>();
+		if (StringUtil.isEmpty(name)) {
+			keys.addAll(dataNodes.keySet());
+		} else {
+			SchemaConfig sc = conf.getSchemas().get(name);
+			if (null != sc) {
+				keys.addAll(sc.getAllDataNodes());
+			}
+		}
+		Collections.sort(keys, new Comparators<String>());
+		for (String key : keys) {
+			RowDataPacket[] rows = getRow(dataNodes.get(key), c.getCharset());
+			for (RowDataPacket row : rows) {
+				row.packetId = ++packetId;
+				buffer = row.write(buffer, c);
+			}
+		}
 
-        // write last eof
-        EOFPacket lastEof = new EOFPacket();
-        lastEof.packetId = ++packetId;
-        buffer = lastEof.write(buffer, c);
+		// write last eof
+		EOFPacket lastEof = new EOFPacket();
+		lastEof.packetId = ++packetId;
+		buffer = lastEof.write(buffer, c);
 
-        // post write
-        c.write(buffer);
-    }
+		// post write
+		c.write(buffer);
+	}
 
-    private static RowDataPacket getRow(MySQLDataNode node, String charset) {
-        RowDataPacket row = new RowDataPacket(FIELD_COUNT);
-        row.add(StringUtil.encode(node.getName(), charset));
-        row.add(StringUtil.encode(node.getConfig().getDataSource(), charset));
-        MySQLDataSource ds = node.getSource();
-        if (ds != null) {
-            row.add(IntegerUtil.toBytes(ds.getIndex()));
-            row.add(ds.getConfig().getType().getBytes());
-            row.add(IntegerUtil.toBytes(ds.getActiveCount()));
-            row.add(IntegerUtil.toBytes(ds.getIdleCount()));
-            row.add(IntegerUtil.toBytes(ds.size()));
-        } else {
-            row.add(null);
-            row.add(null);
-            row.add(null);
-            row.add(null);
-            row.add(null);
-        }
-        row.add(LongUtil.toBytes(node.getExecuteCount()));
-        row.add(StringUtil.encode(nf.format(0), charset));
-        row.add(StringUtil.encode(nf.format(0), charset));
-        row.add(LongUtil.toBytes(0));
-        long recoveryTime = node.getHeartbeatRecoveryTime() - TimeUtil.currentTimeMillis();
-        row.add(LongUtil.toBytes(recoveryTime > 0 ? recoveryTime / 1000L : -1L));
-        return row;
-    }
+	private static RowDataPacket[] getRow(MySQLDataNode node, String charset) {
+		MySQLDataSource[] ds = node.getSource();
+		RowDataPacket[] rows = new RowDataPacket[ds.length];
+		for (int i = 0; i < ds.length; i++) {
+			RowDataPacket row = new RowDataPacket(FIELD_COUNT);
+			row.add(StringUtil.encode(node.getName(), charset));
+			row.add(StringUtil.encode(node.getConfig().getDataSource(), charset));
+			if (ds[i] != null) {
+				row.add(IntegerUtil.toBytes(ds[i].getIndex()));
+				row.add(ds[i].getConfig().getType().getBytes());
+				row.add(IntegerUtil.toBytes(ds[i].getActiveCount()));
+				row.add(IntegerUtil.toBytes(ds[i].getIdleCount()));
+				row.add(IntegerUtil.toBytes(ds[i].size()));
+			} else {
+				row.add(null);
+				row.add(null);
+				row.add(null);
+				row.add(null);
+				row.add(null);
+			}
+			row.add(LongUtil.toBytes(node.getExecuteCount()));
+			row.add(StringUtil.encode(nf.format(0), charset));
+			row.add(StringUtil.encode(nf.format(0), charset));
+			row.add(LongUtil.toBytes(0));
+			long recoveryTime = node.getHeartbeatRecoveryTime() - TimeUtil.currentTimeMillis();
+			row.add(LongUtil.toBytes(recoveryTime > 0 ? recoveryTime / 1000L : -1L));
+			rows[i] = row;
+		}
+		return rows;
+	}
 
-    private static final class Comparators<T> implements Comparator<String> {
-        @Override
-        public int compare(String s1, String s2) {
-            Pair<String, Integer> p1 = PairUtil.splitIndex(s1, '[', ']');
-            Pair<String, Integer> p2 = PairUtil.splitIndex(s2, '[', ']');
-            if (p1.getKey().compareTo(p2.getKey()) == 0) {
-                return p1.getValue() - p2.getValue();
-            } else {
-                return p1.getKey().compareTo(p2.getKey());
-            }
-        }
-    }
+	private static final class Comparators<T> implements Comparator<String> {
+		@Override
+		public int compare(String s1, String s2) {
+			Pair<String, Integer> p1 = PairUtil.splitIndex(s1, '[', ']');
+			Pair<String, Integer> p2 = PairUtil.splitIndex(s2, '[', ']');
+			if (p1.getKey().compareTo(p2.getKey()) == 0) {
+				return p1.getValue() - p2.getValue();
+			} else {
+				return p1.getKey().compareTo(p2.getKey());
+			}
+		}
+	}
 
 }

@@ -32,6 +32,7 @@ import com.alibaba.cobar.route.RouteResultset;
 import com.alibaba.cobar.route.RouteResultsetNode;
 import com.alibaba.cobar.route.ServerRouter;
 import com.alibaba.cobar.route.visitor.PartitionKeyVisitor;
+import com.alibaba.cobar.server.parser.ServerParse;
 import com.alibaba.cobar.server.response.Heartbeat;
 import com.alibaba.cobar.server.response.Ping;
 import com.alibaba.cobar.server.session.BlockingSession;
@@ -146,7 +147,7 @@ public class ServerConnection extends FrontendConnection {
 		Heartbeat.response(this, data);
 	}
 
-	public void execute(String sql, int type) {
+	public void execute(String sql, int sqlType) {
 		long l = System.nanoTime();
 		// 状态检查
 		if (txInterrupted) {
@@ -154,17 +155,23 @@ public class ServerConnection extends FrontendConnection {
 			return;
 		}
 
+		System.err.println(sql);
+
 		// 检查当前使用的DB
 		String db = this.schema;
-		if (db == null) {
-			writeErrMessage(ErrorCode.ER_NO_DB_ERROR, "No database selected");
+		if (db == null && sqlType != ServerParse.USE && sqlType != ServerParse.HELP && sqlType != ServerParse.SET
+				&& sqlType != ServerParse.KILL && sqlType != ServerParse.KILL_QUERY
+				&& sqlType != ServerParse.MYSQL_COMMENT && sqlType != ServerParse.MYSQL_CMD_COMMENT) {
+			writeErrMessage(ErrorCode.ER_BAD_DB_ERROR, "No Database selected");
 			return;
-		}
+		}// sqlType != ServerParse.SHOW &&
 		SchemaConfig schema = CobarServer.getInstance().getConfig().getSchemas().get(db);
-		if (schema == null) {
+		if (schema == null && sqlType != ServerParse.USE && sqlType != ServerParse.HELP && sqlType != ServerParse.SET
+				&& sqlType != ServerParse.KILL && sqlType != ServerParse.KILL_QUERY
+				&& sqlType != ServerParse.MYSQL_COMMENT && sqlType != ServerParse.MYSQL_CMD_COMMENT) {
 			writeErrMessage(ErrorCode.ER_BAD_DB_ERROR, "Unknown database '" + db + "'");
 			return;
-		}
+		}// sqlType != ServerParse.SHOW &&
 
 		try {
 			comPlugn = MultiNodeComDataExecutor.parse(sql, this);
@@ -182,7 +189,7 @@ public class ServerConnection extends FrontendConnection {
 		// 路由计算
 		RouteResultset rrs = null;
 		try {
-			rrs = ServerRouter.route(schema, sql, this.charset, this);
+			rrs = ServerRouter.route(schema, sql, this.charset, this, sqlType);
 		} catch (SQLNonTransientException e) {
 			StringBuilder s = new StringBuilder();
 			LOGGER.warn(s.append(this).append(sql).toString(), e);
@@ -197,7 +204,7 @@ public class ServerConnection extends FrontendConnection {
 				&& ((this.visitor != null && this.visitor.isTableMetaRead()) || schema.isReturnDN())) {
 			this.isMultiMeta = true;
 		}
-		session.execute(rrs, type);
+		session.execute(rrs, sqlType);
 	}
 
 	public void checkTableComData(RouteResultset rrs, String sql, SQLStatement ast, PartitionKeyVisitor visitor)

@@ -189,6 +189,12 @@ public class PartitionOption implements ASTNode {
 					+ lexer.stringValueUppercase());
 		}
 		lexer.nextToken();
+		tk = lexer.token();
+		if (tk == MySQLToken.KW_LINEAR || tk == MySQLToken.KW_COLUMNS) {
+			if (tk == MySQLToken.KW_COLUMNS)
+				haveColumnsKey = true;
+			lexer.nextToken();
+		}
 		if (lexer.token() != MySQLToken.PUNC_LEFT_PAREN) {
 			throw new SQLSyntaxErrorException("table partition  column error Missing parenthesis");
 		}

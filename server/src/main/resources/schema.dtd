@@ -23,6 +23,8 @@
 <!ATTLIST schema group CDATA #IMPLIED>
 <!ATTLIST schema keepSqlSchema NMTOKEN #IMPLIED>
 <!ATTLIST schema returnDn NMTOKEN #IMPLIED>
+<!ATTLIST schema writeIndex NMTOKEN #IMPLIED>
+<!ATTLIST schema openRWSep NMTOKEN #IMPLIED>
 <!ELEMENT table (property*)>
 <!ATTLIST table name CDATA #REQUIRED>
 <!ATTLIST table dataNode CDATA #REQUIRED>
@@ -30,6 +32,8 @@
 <!ATTLIST table ruleRequired NMTOKEN #IMPLIED>
 <!ATTLIST table groupType NMTOKEN #IMPLIED>
 <!ATTLIST table comData NMTOKEN #IMPLIED>
+<!ATTLIST table writeIndex NMTOKEN #IMPLIED>
+<!ATTLIST table openRWSep NMTOKEN #IMPLIED>
 
 <!ELEMENT dataNode (property+)>
 <!ATTLIST dataNode name NMTOKEN #REQUIRED>

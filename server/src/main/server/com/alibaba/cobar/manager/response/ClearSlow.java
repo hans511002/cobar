@@ -31,33 +31,37 @@ import com.alibaba.cobar.net.mysql.OkPacket;
  */
 public class ClearSlow {
 
-    public static void dataNode(ManagerConnection c, String name) {
-        MySQLDataNode dn = CobarServer.getInstance().getConfig().getDataNodes().get(name);
-        MySQLDataSource ds = null;
-        if (dn != null && (ds = dn.getSource()) != null) {
-            ds.getSqlRecorder().clear();
-            c.write(c.writeToBuffer(OkPacket.OK, c.allocate()));
-        } else {
-            c.writeErrMessage(ErrorCode.ER_YES, "Invalid DataNode:" + name);
-        }
-    }
+	public static void dataNode(ManagerConnection c, String name) {
+		MySQLDataNode dn = CobarServer.getInstance().getConfig().getDataNodes().get(name);
+		MySQLDataSource[] ds = null;
+		if (dn != null && (ds = dn.getSource()) != null) {
+			for (int i = 0; i < ds.length; i++) {
+				ds[i].getSqlRecorder().clear();
+			}
+			c.write(c.writeToBuffer(OkPacket.OK, c.allocate()));
+		} else {
+			c.writeErrMessage(ErrorCode.ER_YES, "Invalid DataNode:" + name);
+		}
+	}
 
-    public static void schema(ManagerConnection c, String name) {
-        CobarConfig conf = CobarServer.getInstance().getConfig();
-        SchemaConfig schema = conf.getSchemas().get(name);
-        if (schema != null) {
-            Map<String, MySQLDataNode> dataNodes = conf.getDataNodes();
-            for (String n : schema.getAllDataNodes()) {
-                MySQLDataNode dn = dataNodes.get(n);
-                MySQLDataSource ds = null;
-                if (dn != null && (ds = dn.getSource()) != null) {
-                    ds.getSqlRecorder().clear();
-                }
-            }
-            c.write(c.writeToBuffer(OkPacket.OK, c.allocate()));
-        } else {
-            c.writeErrMessage(ErrorCode.ER_YES, "Invalid Schema:" + name);
-        }
-    }
+	public static void schema(ManagerConnection c, String name) {
+		CobarConfig conf = CobarServer.getInstance().getConfig();
+		SchemaConfig schema = conf.getSchemas().get(name);
+		if (schema != null) {
+			Map<String, MySQLDataNode> dataNodes = conf.getDataNodes();
+			for (String n : schema.getAllDataNodes()) {
+				MySQLDataNode dn = dataNodes.get(n);
+				MySQLDataSource[] ds = null;
+				if (dn != null && (ds = dn.getSource()) != null) {
+					for (int i = 0; i < ds.length; i++) {
+						ds[i].getSqlRecorder().clear();
+					}
+				}
+			}
+			c.write(c.writeToBuffer(OkPacket.OK, c.allocate()));
+		} else {
+			c.writeErrMessage(ErrorCode.ER_YES, "Invalid Schema:" + name);
+		}
+	}
 
 }

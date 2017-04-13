@@ -33,6 +33,8 @@ public final class ServerParseSet {
     public static final int CHARACTER_SET_CLIENT = 8;
     public static final int CHARACTER_SET_CONNECTION = 9;
     public static final int CHARACTER_SET_RESULTS = 10;
+	public static final int XA_FLAG_ON = 11;
+	public static final int XA_FLAG_OFF = 12;
 
     public static int parse(String stmt, int offset) {
         int i = offset;
@@ -62,13 +64,35 @@ public final class ServerParseSet {
             case 'T':
             case 't':
                 return transaction(stmt, i);
+			case 'X':
+			case 'x':
+				return xaFlag(stmt, i);
             default:
                 return OTHER;
             }
         }
         return OTHER;
-    }
+	}
+	// set xa=1
+	private static int xaFlag(String stmt, int offset) {
+		if (stmt.length() > offset + 1) {
+			char c1 = stmt.charAt(++offset);
+			char c2=stmt.charAt(++offset);
+			if ((c1 == 'A' || c1 == 'a')
+					&&( c2== ' '||c2=='=')) {
+				int value = autocommitValue(stmt, offset);
+				if (value == AUTOCOMMIT_ON) {
+					return XA_FLAG_ON;
+				} else if (value == AUTOCOMMIT_OFF) {
+					return XA_FLAG_OFF;
+				} else {
+					return OTHER;
+				}
 
+			}
+		}
+		return OTHER;
+	}
     // SET AUTOCOMMIT(' '=)
     private static int autocommit(String stmt, int offset) {
         if (stmt.length() > offset + 9) {

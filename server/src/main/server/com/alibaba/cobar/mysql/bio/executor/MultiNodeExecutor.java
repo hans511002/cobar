@@ -54,8 +54,6 @@ import com.alibaba.cobar.util.StringUtil;
 /**
  * 多数据节点执行器
  * 
- * @author xianmao.hexm
- * @author <a href="mailto:shuo.qius@alibaba-inc.com">QIU Shuo</a>
  */
 public final class MultiNodeExecutor extends NodeExecutor {
 	private static final Logger LOGGER = Logger.getLogger(MultiNodeExecutor.class);

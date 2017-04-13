@@ -163,7 +163,16 @@ public class XMLSchemaLoader implements SchemaLoader {
 			if (schemaElement.hasAttribute("returnDn")) {
 				isReturnDn = Boolean.parseBoolean(schemaElement.getAttribute("returnDn").trim());
 			}
-			schemas.put(name, new SchemaConfig(name, dataNode, group, keepSqlSchema, isReturnDn, tables));
+			boolean openRWSep = false;
+			if (schemaElement.hasAttribute("openRWSep")) {
+				openRWSep = Boolean.parseBoolean(schemaElement.getAttribute("openRWSep").trim());
+			}
+			int writeIndex = 0;
+			if (schemaElement.hasAttribute("writeIndex")) {
+				writeIndex = Integer.parseInt(schemaElement.getAttribute("writeIndex").trim());
+			}
+			schemas.put(name, new SchemaConfig(name, dataNode, group, keepSqlSchema, isReturnDn, writeIndex, openRWSep,
+					tables));
 		}
 	}
 
@@ -191,10 +200,18 @@ public class XMLSchemaLoader implements SchemaLoader {
 				comJoin = Boolean.parseBoolean(tableElement.getAttribute("comData"));
 			}
 			String groupType = tableElement.getAttribute("groupType");
-
+			int writeIndex = -1;
+			if (tableElement.hasAttribute("writeIndex")) {
+				writeIndex = Integer.parseInt(tableElement.getAttribute("writeIndex").trim());
+			}
+			boolean openRWSep = false;
+			if (tableElement.hasAttribute("openRWSep")) {
+				openRWSep = Boolean.parseBoolean(tableElement.getAttribute("openRWSep").trim());
+			}
 			String[] tableNames = SplitUtil.split(name, ',', true);
 			for (String tableName : tableNames) {
-				TableConfig table = new TableConfig(tableName, dataNode, tableRule, ruleRequired, groupType, comJoin);
+				TableConfig table = new TableConfig(tableName, dataNode, tableRule, ruleRequired, groupType, comJoin,
+						writeIndex, openRWSep);
 				checkDataNodeExists(table.getDataNodes());
 				if (tables.containsKey(table.getName())) {
 					throw new ConfigException("table " + tableName + " duplicated!");

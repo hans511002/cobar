@@ -16,26 +16,53 @@
 -->
 <!DOCTYPE cobar:rule SYSTEM "rule.dtd">
 <cobar:rule xmlns:cobar="http://cobar.alibaba.com/">
-
+	<tableRule name="rule1">
+		<rule>
+			<columns>id</columns>
+			<algorithm><![CDATA[ func1(${id}) ]]></algorithm>
+		</rule>
+	</tableRule>
   <!-- 路由规则定义，定义什么表，什么字段，采用什么路由算法 -->
-   
+  <tableRule name="RULE_IMSI">
+    <rule>
+      <columns>IMSI</columns>
+      <algorithm><![CDATA[ func_imsi_long(${IMSI}) ]]></algorithm>
+    </rule>
+  </tableRule>
+  <tableRule name="RULE_IMSI_32">
+    <rule>
+      <columns>IMSI</columns>
+      <algorithm><![CDATA[ func_imsi_32(${IMSI}) ]]></algorithm>
+    </rule>
+  </tableRule>
   <tableRule name="RULE_IMSI_ND10">
       <rule>
          <columns>IMSI</columns>
-         <algorithm><![CDATA[ func_imsi_dn10(${IMSI}) ]]></algorithm>
+         <algorithm><![CDATA[ func_imsi_dn11(${IMSI}) ]]></algorithm>
       </rule>
   </tableRule>
 
   
   <!-- 路由函数定义 -->
-   <function name="func_imsi_dn10" class="com.alibaba.cobar.route.function.PartitionByLong">
-	   <property name="partitionCount">4,6</property>
-       <property name="partitionLength">103,102</property>
+  	<function name="func1" class="com.alibaba.cobar.route.function.PartitionByLong">
+		<property name="partitionCount">2</property>
+		<property name="partitionLength">512</property>
+	</function>
+   <function name="func_imsi_dn11" class="com.alibaba.cobar.route.function.PartitionByLong">
+           <property name="partitionCount">10,1</property>
+                   <property name="partitionLength">93,94</property>
+                     </function>
+  <function name="func_imsi_32" class="com.alibaba.cobar.route.function.PartitionByLong">
+	<property name="partitionCount">1,1,1,1,1,1,1,1,1,1,1,1</property>
+	<property name="partitionLength">34,90,90,90,90,90,90,90,90,90,90,90</property>
   </function>
-  
+   <function name="func_imsi_long" class="com.alibaba.cobar.route.function.PartitionByLong">
+	<property name="partitionCount">1,1,1,1,1,1,1,1,1,1,1,1</property>
+	<property name="partitionLength">34,90,90,90,90,90,90,90,90,90,90,90</property>
+  </function>
   <function name="func_imsi" class="com.alibaba.cobar.route.function.PartitionByString">
- 	 <property name="partitionCount">4,6</property>
-     <property name="partitionLength">103,102</property>
+ 	<property name="partitionCount">1,1,1,1,1,1,1,1,1,1,1,1</property>
+	<property name="partitionLength">34,90,90,90,90,90,90,90,90,90,90,90</property>
 	<!--字符串需要先取hash值再做映射，这里定义取字符串的哪一部分子串做hash-->
 	<!--:8表示子串的下标，意思是取路由字段的前8个字符做hash，该语法
 	与python取字符串下标方式相同

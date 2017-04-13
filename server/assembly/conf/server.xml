@@ -58,9 +58,9 @@
     <property name="clusterHeartbeatPass">_HEARTBEAT_PASS_</property>
   </system>
   <!-- 用户访问定义，用户名、密码、schema等信息。 -->
-  <user name="net">
-    <property name="password">net</property>
-    <property name="schemas">neto_sc,neto_hb,neto_basic,infdb,netdb</property>
+  <user name="sdba">
+    <property name="password">sdba</property>
+    <property name="schemas">test</property>
   </user>
  
   <user name="mydb">
@@ -70,12 +70,12 @@
 
   <!-- 集群列表定义，指定集群节点的主机和权重，用于集群间的心跳和客户端负载均衡。 -->
   <cluster>
-  	   <!--
+  	  
     <node name="cobar1">
-      <property name="host">133.37.31.51</property>
+      <property name="host">127.0.0.1</property>
       <property name="weight">1</property>
     </node>
-	<node name="cobar2">
+	 <!--<node name="cobar2">
       <property name="host">133.37.31.52</property>
       <property name="weight">1</property>
     </node>
@@ -101,23 +101,7 @@
       <property name="weight">1</property>
     </node>
     -->
-       
-    <node name="cobar9">
-      <property name="host">133.37.31.59</property>
-      <property name="weight">1</property>
-    </node>
-    <node name="cobar10">
-      <property name="host">133.37.31.60</property>
-      <property name="weight">1</property>
-    </node>
-    <node name="cobar11">
-      <property name="host">133.37.31.61</property>
-      <property name="weight">1</property>
-    </node>
-    <node name="cobar12">
-      <property name="host">133.37.31.62</property>
-      <property name="weight">1</property>
-    </node>
+     
   </cluster>
   
    

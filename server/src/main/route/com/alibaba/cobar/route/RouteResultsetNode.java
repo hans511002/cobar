@@ -15,6 +15,9 @@
  */
 package com.alibaba.cobar.route;
 
+import com.alibaba.cobar.config.model.SchemaConfig;
+import com.alibaba.cobar.config.model.TableConfig;
+
 /**
  * @author xianmao.hexm
  */
@@ -23,16 +26,47 @@ public final class RouteResultsetNode {
 
 	private final String name; // 数据节点名称
 	private final int replicaIndex;// 数据源编号
+	private final int type;// sql类型
 	private String statement; // 执行的语句
 
+	private final SchemaConfig schema;
+	private final TableConfig table;
+
 	public RouteResultsetNode(String name, String statement) {
-		this(name, DEFAULT_REPLICA_INDEX, statement);
+		this(name, DEFAULT_REPLICA_INDEX, statement, -1);
+	}
+
+	public RouteResultsetNode(String name, String statement, SchemaConfig schema, TableConfig table, int type) {
+		this(name, DEFAULT_REPLICA_INDEX, statement, schema, table, type);
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public SchemaConfig getSchema() {
+		return schema;
+	}
+
+	public TableConfig getTable() {
+		return table;
 	}
 
 	public RouteResultsetNode(String name, int index, String statement) {
+		this(name, index, statement, -1);
+	}
+
+	public RouteResultsetNode(String name, int index, String statement, int type) {
+		this(name, index, statement, null, null, type);
+	}
+
+	public RouteResultsetNode(String name, int index, String statement, SchemaConfig schema, TableConfig table, int type) {
 		this.name = name;
 		this.replicaIndex = index;
 		this.statement = statement;
+		this.type = type;
+		this.schema = schema;
+		this.table = table;
 	}
 
 	public String getName() {
