@@ -167,7 +167,7 @@ public final class ShowDataNode {
 				row.add(null);
 				row.add(null);
 			}
-			row.add(LongUtil.toBytes(node.getExecuteCount()));
+			row.add(LongUtil.toBytes(node.getExecuteCount(i)));
 			row.add(StringUtil.encode(nf.format(0), charset));
 			row.add(StringUtil.encode(nf.format(0), charset));
 			row.add(LongUtil.toBytes(0));

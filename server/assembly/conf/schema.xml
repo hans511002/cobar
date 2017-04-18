@@ -17,46 +17,82 @@
 <!DOCTYPE cobar:schema SYSTEM "schema.dtd">
 <cobar:schema xmlns:cobar="http://cobar.alibaba.com/">
 
- <schema name="test" dataNode="netDb[0]" keepSqlSchema="true" openRWSep="true" writeIndex="0"> 
-    	    <table name="p"   dataNode="netDb[0],netDb[1]" rule="rule1" />
+ <schema name="test" dataNode="netDb1" keepSqlSchema="true" openRWSep="true" writeIndex="0"> 
+    	    <table name="p"   dataNode="netDb1,netDb2" rule="rule1" />
+    	    <table name="e" dataNode="netDb1" openRWSep="true" writeIndex="1"  />
   </schema> 
   
   <!-- schema定义 writeIndex 指定写节点的索引-->
-  <schema name="test1" dataNode="netDb[0]" keepSqlSchema="true" writeIndex="0">
-    <table name="P_.*" dataNode="netDb$0-1" rule="RULE_IMSI_ND10" groupType="regex" comData="true"/>
+  <schema name="test1" dataNode="netDb2" keepSqlSchema="true" writeIndex="0">
+    <table name="P_.*" dataNode="netDb1,netDb2" rule="RULE_IMSI_ND10" groupType="regex" comData="true"/>
   </schema>
  
     
   <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。-->
-  <dataNode name="netDb">
+  <dataNode name="netDb1">
     <property name="dataSource">
-      <dataSourceRef>netDbMaster$0-1</dataSourceRef>
-      <dataSourceRef>netDbSlave$0-1</dataSourceRef>
+      <dataSourceRef>netDbMaster1</dataSourceRef>
+      <dataSourceRef>netDbSlave11</dataSourceRef>
+      <dataSourceRef>netDbSlave12</dataSourceRef>
     </property>
 
     <!--Cobar与后端数据源连接池大小设置-->
 	<property name="poolSize">128</property>
 	<property name="heartbeatSQL">select user()</property>
   </dataNode>
+  <dataNode name="netDb2">
+    <property name="dataSource">
+      <dataSourceRef>netDbMaster2</dataSourceRef>
+      <dataSourceRef>netDbSlave21</dataSourceRef>
+     </property>
+
+    <!--Cobar与后端数据源连接池大小设置-->
+	<property name="poolSize">128</property>
+	<property name="heartbeatSQL">select user()</property>
+  </dataNode>
    <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。-->
-     <dataSource name="netDbMaster" type="mysql">
+     <dataSource name="netDbMaster1" type="mysql">
     <property name="location">
       <location>172.16.131.131:3306/test</location>
-      <location>172.16.131.37:3306/test</location>     
+     </property>
+    <property name="user">sdba</property>
+    <property name="password">sdba</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+     <dataSource name="netDbMaster2" type="mysql">
+    <property name="location">
+       <location>172.16.131.37:3306/test</location>     
     </property>
     <property name="user">sdba</property>
     <property name="password">sdba</property>
     <property name="sqlMode">STRICT_TRANS_TABLES</property>
   </dataSource>
   
-    <dataSource name="netDbSlave" type="mysql">
+ <dataSource name="netDbSlave11" type="mysql">
     <property name="location">
       <location>172.16.131.37:3306/test</location>        
+    </property>
+    <property name="user">sdba</property>
+    <property name="password">sdba</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+ <dataSource name="netDbSlave12" type="mysql">
+    <property name="location">
       <location>172.16.131.131:3306/test</location>
     </property>
     <property name="user">sdba</property>
     <property name="password">sdba</property>
     <property name="sqlMode">STRICT_TRANS_TABLES</property>
   </dataSource>
-
+  
+ <dataSource name="netDbSlave21" type="mysql">
+    <property name="location">
+      <location>172.16.131.131:3306/test</location>
+     </property>
+    <property name="user">sdba</property>
+    <property name="password">sdba</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+  
+ 
 </cobar:schema>

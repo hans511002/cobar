@@ -192,6 +192,8 @@ public class MySQLDALParser extends MySQLParser {
 			lexer.nextToken();
 			matchIdentifier("LOGS");
 			return new ShowBinaryLog();
+		case KW_COLUMNS:
+			return showColumns(false);
 		case KW_CHARACTER:
 			lexer.nextToken();
 			match(KW_SET);

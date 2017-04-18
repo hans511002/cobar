@@ -12,5 +12,9 @@
 	<classpathentry kind="lib" path="D:/mpp/product/Cobar/src/lib/mysql-connector-java.jar"/>
 	<classpathentry kind="lib" path="D:/mpp/product/Cobar/src/lib/slf4j-api-1.7.5.jar"/>
 	<classpathentry kind="lib" path="D:/mpp/product/Cobar/src/lib/slf4j-log4j12-1.7.5.jar"/>
+	<classpathentry kind="lib" path="assembly/lib/jackson-core-asl-1.8.8.jar"/>
+	<classpathentry kind="lib" path="assembly/lib/jackson-mapper-asl-1.8.8.jar"/>
+	<classpathentry kind="lib" path="assembly/lib/zkclient-0.4.jar"/>
+	<classpathentry kind="lib" path="assembly/lib/zookeeper-3.4.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

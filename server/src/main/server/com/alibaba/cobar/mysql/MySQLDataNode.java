@@ -52,7 +52,7 @@ public final class MySQLDataNode {
 	private MySQLConnectionPool[] dataSources;
 	private int activedIndex;
 	private boolean[] activeFlag;
-	private long executeCount;
+	private long[] executeCount;
 	private long selCount;
 	private long heartbeatRecoveryTime;
 	private volatile boolean initSuccess;
@@ -155,8 +155,11 @@ public final class MySQLDataNode {
 		return config;
 	}
 
-	public long getExecuteCount() {
-		return executeCount;
+	public long getExecuteCount(int i) {
+		if (executeCount == null) {
+			executeCount = new long[this.sources.length];
+		}
+		return executeCount[i];
 	}
 
 	public long getSelCount() {
@@ -196,7 +199,7 @@ public final class MySQLDataNode {
 	public Channel getChannel(int i) throws Exception {
 		if (initSuccess) {
 			Channel c = sources[i].getChannel();
-			++executeCount;
+			++executeCount[i];
 			return c;
 		} else {
 			throw new IllegalArgumentException("Invalid DataSource:" + i);
@@ -231,6 +234,7 @@ public final class MySQLDataNode {
 	public void setSources(MySQLDataSource[] sources) {
 		this.sources = sources;
 		activeFlag = new boolean[sources.length];
+		executeCount = new long[this.sources.length];
 	}
 
 	public MySQLDataSource[] getSource() {
