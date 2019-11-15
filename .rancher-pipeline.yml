@@ -1,0 +1,8 @@
+stages:
+- name: make
+  steps:
+  - runScriptConfig:
+      image: java:8
+      shellScript: mvn package
+timeout: 60
+notification: {}
