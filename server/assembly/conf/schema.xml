@@ -26,8 +26,33 @@
   <schema name="test1" dataNode="netDb2" keepSqlSchema="true" writeIndex="0">
     <table name="P_.*" dataNode="netDb1,netDb2" rule="RULE_IMSI_ND10" groupType="regex" comData="true"/>
   </schema>
+  
+   <schema name="mydb" dataNode="dn1" keepSqlSchema="true" openRWSep="true" writeIndex="0" >
+  		<table name="test" dataNode="dn1,dn2" rule="rule1" />
+		<table name="versions" dataNode="dn1,dn2"   />
+		<table name="mb_system" dataNode="dn1,dn2"  />
+		<table name="mb_user" dataNode="dn1,dn2"   />
+		<table name="mb_user_system" dataNode="dn1,dn2"   />
+		<table name="mb_user_data" dataNode="dn1,dn2"  />
+		<table name="mb_user_.*" dataNode="dn1,dn2" groupType="regex"   />
+		<table name="mb_userfriends" dataNode="dn2"  />
+   </schema>
  
-    
+   <dataNode name="dn1" >
+	   <property name="dataSource">
+	      <dataSourceRef>mydb1</dataSourceRef>
+	    </property>
+		<property name="poolSize">128</property>
+		<property name="heartbeatSQL">select user()</property>
+   </dataNode>
+  <dataNode name="dn2" >
+	   <property name="dataSource">
+	      <dataSourceRef>mydb2</dataSourceRef>
+	    </property>
+		<property name="poolSize">128</property>
+		<property name="heartbeatSQL">select user()</property>
+   </dataNode>
+ 
   <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。-->
   <dataNode name="netDb1">
     <property name="dataSource">
@@ -40,6 +65,7 @@
 	<property name="poolSize">128</property>
 	<property name="heartbeatSQL">select user()</property>
   </dataNode>
+  
   <dataNode name="netDb2">
     <property name="dataSource">
       <dataSourceRef>netDbMaster2</dataSourceRef>
@@ -50,8 +76,31 @@
 	<property name="poolSize">128</property>
 	<property name="heartbeatSQL">select user()</property>
   </dataNode>
+  
+  
+  
+ <dataSource name="mydb1" type="mysql">
+    <property name="location">
+      <location>124.223.205.36:3306/mydb1</location>
+     </property>
+    <property name="user">mydb</property>
+    <property name="password">mobi2us@123</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+  <dataSource name="mydb2" type="mysql">
+    <property name="location">
+      <location>124.223.205.36:3306/mydb2</location>
+     </property>
+    <property name="user">mydb</property>
+    <property name="password">mobi2us@123</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+  
+    
+    
+  
    <!-- 数据节点定义，数据节点由数据源和其他一些参数组织而成。-->
-     <dataSource name="netDbMaster1" type="mysql">
+  <dataSource name="netDbMaster1" type="mysql">
     <property name="location">
       <location>172.16.131.131:3306/test</location>
      </property>
@@ -59,15 +108,7 @@
     <property name="password">sdba</property>
     <property name="sqlMode">STRICT_TRANS_TABLES</property>
   </dataSource>
-     <dataSource name="netDbMaster2" type="mysql">
-    <property name="location">
-       <location>172.16.131.37:3306/test</location>     
-    </property>
-    <property name="user">sdba</property>
-    <property name="password">sdba</property>
-    <property name="sqlMode">STRICT_TRANS_TABLES</property>
-  </dataSource>
-  
+    
  <dataSource name="netDbSlave11" type="mysql">
     <property name="location">
       <location>172.16.131.37:3306/test</location>        
@@ -76,9 +117,20 @@
     <property name="password">sdba</property>
     <property name="sqlMode">STRICT_TRANS_TABLES</property>
   </dataSource>
+  
  <dataSource name="netDbSlave12" type="mysql">
     <property name="location">
       <location>172.16.131.131:3306/test</location>
+    </property>
+    <property name="user">sdba</property>
+    <property name="password">sdba</property>
+    <property name="sqlMode">STRICT_TRANS_TABLES</property>
+  </dataSource>
+  
+  
+ <dataSource name="netDbMaster2" type="mysql">
+    <property name="location">
+       <location>172.16.131.37:3306/test</location>     
     </property>
     <property name="user">sdba</property>
     <property name="password">sdba</property>

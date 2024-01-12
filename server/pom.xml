@@ -100,7 +100,6 @@
         <executions>
         <execution>
          <id>add-source</id>
-       
            <goals>
               <goal>add-source</goal>
             </goals>  
