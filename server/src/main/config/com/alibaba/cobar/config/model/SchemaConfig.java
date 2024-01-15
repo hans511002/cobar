@@ -42,11 +42,14 @@ public class SchemaConfig {
 	private final boolean returnDN;
 	private final int writeIndex;
 	private final boolean openRWSep;
+	private final boolean defaultGlobal;
+	private final String dataNodes[];
 
 	public SchemaConfig(String name, String dataNode, String group, boolean keepSqlSchema, boolean isReturnDN,
-			int writeIndex, boolean openRWSep, Map<String, TableConfig> tables) {
+			int writeIndex, boolean openRWSep, boolean defaultGlobal, Map<String, TableConfig> tables) {
 		this.name = name;
-		this.dataNode = dataNode;
+		dataNodes = dataNode.split(",");
+		this.dataNode = dataNodes[0];
 		this.group = group;
 		this.tables = tables;
 		for (String string : tables.keySet()) {
@@ -61,6 +64,15 @@ public class SchemaConfig {
 		this.returnDN = isReturnDN;
 		this.writeIndex = writeIndex;
 		this.openRWSep = openRWSep;
+		this.defaultGlobal = defaultGlobal;
+	}
+
+	public String[] getDataNodes() {
+		return dataNodes;
+	}
+
+	public boolean isDefaultGlobal() {
+		return defaultGlobal;
 	}
 
 	public boolean isOpenRWSep() {

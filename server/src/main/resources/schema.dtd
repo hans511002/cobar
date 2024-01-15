@@ -25,6 +25,7 @@
 <!ATTLIST schema returnDn NMTOKEN #IMPLIED>
 <!ATTLIST schema writeIndex NMTOKEN #IMPLIED>
 <!ATTLIST schema openRWSep NMTOKEN #IMPLIED>
+<!ATTLIST schema defaultGlobal NMTOKEN #IMPLIED>
 <!ELEMENT table (property*)>
 <!ATTLIST table name CDATA #REQUIRED>
 <!ATTLIST table dataNode CDATA #REQUIRED>
@@ -34,6 +35,7 @@
 <!ATTLIST table comData NMTOKEN #IMPLIED>
 <!ATTLIST table writeIndex NMTOKEN #IMPLIED>
 <!ATTLIST table openRWSep NMTOKEN #IMPLIED>
+<!ATTLIST table global NMTOKEN #IMPLIED>
 
 <!ELEMENT dataNode (property+)>
 <!ATTLIST dataNode name NMTOKEN #REQUIRED>

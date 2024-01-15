@@ -45,9 +45,10 @@ public class TableConfig {
 	private final Pattern tablePattern;
 	private final int writeIndex;
 	private final boolean openRWSep;
+	private final boolean isGlobal;
 
 	public TableConfig(String name, String dataNode, TableRuleConfig rule, boolean ruleRequired, String groupType,
-			boolean comData, int writeIndex, boolean openRWSep) {
+			boolean comData, int writeIndex, boolean openRWSep, boolean isGlobal) {
 		if (name == null) {
 			throw new IllegalArgumentException("table name is null");
 		}
@@ -63,6 +64,7 @@ public class TableConfig {
 		this.groupType = groupType;
 		this.writeIndex = writeIndex;
 		this.openRWSep = openRWSep;
+		this.isGlobal = isGlobal;
 		if (this.groupType == null || this.groupType.trim().equals("")) {
 			tableGroupType = 0;
 			this.tablePattern = null;
@@ -81,6 +83,10 @@ public class TableConfig {
 				throw new ConfigException(e);
 			}
 		}
+	}
+
+	public boolean isGlobal() {
+		return isGlobal;
 	}
 
 	public Set<String> getColumnIndex() {

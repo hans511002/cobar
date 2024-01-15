@@ -164,14 +164,14 @@ public class ServerConnection extends FrontendConnection {
 				&& sqlType != ServerParse.MYSQL_COMMENT && sqlType != ServerParse.MYSQL_CMD_COMMENT) {
 			writeErrMessage(ErrorCode.ER_BAD_DB_ERROR, "No Database selected");
 			return;
-		}// sqlType != ServerParse.SHOW &&
+		} // sqlType != ServerParse.SHOW &&
 		SchemaConfig schema = CobarServer.getInstance().getConfig().getSchemas().get(db);
 		if (schema == null && sqlType != ServerParse.USE && sqlType != ServerParse.HELP && sqlType != ServerParse.SET
 				&& sqlType != ServerParse.KILL && sqlType != ServerParse.KILL_QUERY
 				&& sqlType != ServerParse.MYSQL_COMMENT && sqlType != ServerParse.MYSQL_CMD_COMMENT) {
 			writeErrMessage(ErrorCode.ER_BAD_DB_ERROR, "Unknown database '" + db + "'");
 			return;
-		}// sqlType != ServerParse.SHOW &&
+		} // sqlType != ServerParse.SHOW &&
 
 		try {
 			comPlugn = MultiNodeComDataExecutor.parse(sql, this);
@@ -254,8 +254,7 @@ public class ServerConnection extends FrontendConnection {
 	/**
 	 * 撤销执行中的语句
 	 * 
-	 * @param sponsor
-	 *            发起者为null表示是自己
+	 * @param sponsor 发起者为null表示是自己
 	 */
 	public void cancel(final FrontendConnection sponsor) {
 		processor.getExecutor().execute(new Runnable() {

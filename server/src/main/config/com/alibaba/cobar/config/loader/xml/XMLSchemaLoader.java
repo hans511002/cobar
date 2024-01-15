@@ -143,7 +143,8 @@ public class XMLSchemaLoader implements SchemaLoader {
 			String dataNode = schemaElement.getAttribute("dataNode");
 			// 在非空的情况下检查dataNode是否存在
 			if (dataNode != null && dataNode.length() != 0) {
-				checkDataNodeExists(dataNode);
+				String dataNodes[] = dataNode.split(",");
+				checkDataNodeExists(dataNodes);
 			} else {
 				dataNode = "";// 确保非空
 			}
@@ -151,7 +152,11 @@ public class XMLSchemaLoader implements SchemaLoader {
 			if (schemaElement.hasAttribute("group")) {
 				group = schemaElement.getAttribute("group").trim();
 			}
-			Map<String, TableConfig> tables = loadTables(schemaElement);
+			boolean defaultGlobal = true;
+			if (schemaElement.hasAttribute("defaultGlobal")) {
+				defaultGlobal = Boolean.parseBoolean(schemaElement.getAttribute("defaultGlobal").trim());
+			}
+			Map<String, TableConfig> tables = loadTables(schemaElement, defaultGlobal);
 			if (schemas.containsKey(name)) {
 				throw new ConfigException("schema " + name + " duplicated!");
 			}
@@ -172,11 +177,11 @@ public class XMLSchemaLoader implements SchemaLoader {
 				writeIndex = Integer.parseInt(schemaElement.getAttribute("writeIndex").trim());
 			}
 			schemas.put(name, new SchemaConfig(name, dataNode, group, keepSqlSchema, isReturnDn, writeIndex, openRWSep,
-					tables));
+					defaultGlobal, tables));
 		}
 	}
 
-	private Map<String, TableConfig> loadTables(Element node) {
+	private Map<String, TableConfig> loadTables(Element node, boolean defaultGlobal) {
 		Map<String, TableConfig> tables = new HashMap<String, TableConfig>();
 		NodeList nodeList = node.getElementsByTagName("table");
 		for (int i = 0; i < nodeList.getLength(); i++) {
@@ -208,10 +213,14 @@ public class XMLSchemaLoader implements SchemaLoader {
 			if (tableElement.hasAttribute("openRWSep")) {
 				openRWSep = Boolean.parseBoolean(tableElement.getAttribute("openRWSep").trim());
 			}
+			boolean isGlobal = defaultGlobal;
+			if (tableElement.hasAttribute("global") && tableRule == null) {
+				isGlobal = Boolean.parseBoolean(tableElement.getAttribute("global").trim());
+			}
 			String[] tableNames = SplitUtil.split(name, ',', true);
 			for (String tableName : tableNames) {
 				TableConfig table = new TableConfig(tableName, dataNode, tableRule, ruleRequired, groupType, comJoin,
-						writeIndex, openRWSep);
+						writeIndex, openRWSep, isGlobal);
 				checkDataNodeExists(table.getDataNodes());
 				if (tables.containsKey(table.getName())) {
 					throw new ConfigException("table " + tableName + " duplicated!");
@@ -242,8 +251,8 @@ public class XMLSchemaLoader implements SchemaLoader {
 			try {
 				Element dsElement = findPropertyByName(element, "dataSource");
 				if (dsElement == null) {
-					throw new NullPointerException("dataNode xml Element with name of " + dnNamePrefix
-							+ " has no dataSource Element");
+					throw new NullPointerException(
+							"dataNode xml Element with name of " + dnNamePrefix + " has no dataSource Element");
 				}
 				NodeList dataSourceList = dsElement.getElementsByTagName("dataSourceRef");
 				String dataSources[][] = new String[dataSourceList.getLength()][];
@@ -304,8 +313,8 @@ public class XMLSchemaLoader implements SchemaLoader {
 				String dsType = element.getAttribute("type");
 				Element locElement = findPropertyByName(element, "location");
 				if (locElement == null) {
-					throw new NullPointerException("dataSource xml Element with name of " + dsNamePrefix
-							+ " has no location Element");
+					throw new NullPointerException(
+							"dataSource xml Element with name of " + dsNamePrefix + " has no location Element");
 				}
 				NodeList locationList = locElement.getElementsByTagName("location");
 				int dsIndex = 0;

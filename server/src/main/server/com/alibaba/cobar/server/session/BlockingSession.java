@@ -91,7 +91,7 @@ public class BlockingSession implements Session {
 			return;
 		}
 
-		// 选择执行方式
+//		// 选择执行方式
 		if (nodes.length == 1) {
 			singleNodeExecutor.execute(nodes[0], this, rrs.getFlag());
 		} else {
@@ -191,8 +191,8 @@ public class BlockingSession implements Session {
 	/**
 	 * MUST be called at the end of {@link NodeExecutor}
 	 * 
-	 * @param pessimisticRelease
-	 *            true if this method might be invoked concurrently with {@link #kill()}
+	 * @param pessimisticRelease true if this method might be invoked concurrently
+	 *                           with {@link #kill()}
 	 */
 	private void clear(boolean pessimisticRelease) {
 		for (RouteResultsetNode rrn : target.keySet()) {

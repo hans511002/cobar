@@ -27,14 +27,14 @@
     <table name="P_.*" dataNode="netDb1,netDb2" rule="RULE_IMSI_ND10" groupType="regex" comData="true"/>
   </schema>
   
-   <schema name="mydb" dataNode="dn1" keepSqlSchema="true" openRWSep="true" writeIndex="0" >
+   <schema name="mydb" dataNode="dn1,dn2" keepSqlSchema="true" openRWSep="true" writeIndex="0" defaultGlobal="false" returnDn="true" >
   		<table name="test" dataNode="dn1,dn2" rule="rule1" />
 		<table name="versions" dataNode="dn1,dn2"   />
 		<table name="mb_system" dataNode="dn1,dn2"  />
-		<table name="mb_user" dataNode="dn1,dn2"   />
+		<table name="mb_user" dataNode="dn1,dn2"  global="true" />
 		<table name="mb_user_system" dataNode="dn1,dn2"   />
 		<table name="mb_user_data" dataNode="dn1,dn2"  />
-		<table name="mb_user_.*" dataNode="dn1,dn2" groupType="regex"   />
+		<table name="mb_user_.*" dataNode="dn1,dn2" groupType="regex"  global="true" />
 		<table name="mb_userfriends" dataNode="dn2"  />
    </schema>
  

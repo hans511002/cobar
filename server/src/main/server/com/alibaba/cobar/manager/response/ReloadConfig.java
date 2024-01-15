@@ -86,7 +86,7 @@ public final class ReloadConfig {
 			} else {
 				dn.init(1, 0);
 			}
-			if (!dn.isInitSuccess()) {
+			if (!dn.isInitSuccess() && (cdn != null && cdn.isInitSuccess())) {
 				reloadStatus = false;
 				break;
 			}

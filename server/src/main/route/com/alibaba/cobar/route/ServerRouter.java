@@ -34,11 +34,14 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
+import com.alibaba.cobar.CobarConfig;
+import com.alibaba.cobar.CobarServer;
 import com.alibaba.cobar.config.model.SchemaConfig;
 import com.alibaba.cobar.config.model.TableConfig;
 import com.alibaba.cobar.config.model.rule.RuleAlgorithm;
 import com.alibaba.cobar.config.model.rule.RuleConfig;
 import com.alibaba.cobar.config.model.rule.TableRuleConfig;
+import com.alibaba.cobar.mysql.MySQLDataNode;
 import com.alibaba.cobar.mysql.bio.executor.MultiNodeComDataExecutor;
 import com.alibaba.cobar.parser.ast.ASTNode;
 import com.alibaba.cobar.parser.ast.expression.Expression;
@@ -96,8 +99,32 @@ public final class ServerRouter {
 		return route(schema, stmt, charset, info, -1);
 	}
 
-	public static RouteResultset route(SchemaConfig schema, String stmt, String charset, ServerConnection info, int type)
-			throws SQLNonTransientException {
+	static RouteResultsetNode[] getDefaultRRNode(SchemaConfig schema, String stmt, SQLStatement ast,
+			ServerConnection info, int type) {
+		String[] dataNodes = schema.getDataNodes();
+		if (schema.isDefaultGlobal() && ast instanceof DMLSelectStatement) {
+			RouteResultsetNode[] rn = new RouteResultsetNode[1];
+			CobarConfig conf = CobarServer.getInstance().getConfig();
+			Map<String, MySQLDataNode> cNodes = conf.getDataNodes();
+			for (int i = 0; i < dataNodes.length; ++i) {
+				MySQLDataNode dn = cNodes.get(dataNodes[i]);
+				if (dn.isInitSuccess()) {
+					rn[i] = new RouteResultsetNode(dataNodes[i], stmt, schema, null, type);
+					break;
+				}
+			}
+			return (rn);
+		} else {
+			RouteResultsetNode[] rn = new RouteResultsetNode[dataNodes.length];
+			for (int i = 0; i < dataNodes.length; ++i) {
+				rn[i] = new RouteResultsetNode(dataNodes[i], stmt, schema, null, type);
+			}
+			return (rn);
+		}
+	}
+
+	public static RouteResultset route(SchemaConfig schema, String stmt, String charset, ServerConnection info,
+			int type) throws SQLNonTransientException {
 		info.setSQLAttr(null, null);
 		RouteResultset rrs = new RouteResultset(stmt);
 		info.setTableConfig(null);
@@ -105,14 +132,14 @@ public final class ServerRouter {
 		int prefixIndex = HintRouter.indexOfPrefix(stmt);
 		if (prefixIndex >= 0) {
 			HintRouter.routeFromHint(info, schema, rrs, prefixIndex, stmt);
-			// info.checkTableComData(rrs, rrs.getNodes()[0].getStatement(), null, null);//放到路由函数内，可能会减少一次SQL解析
+			// info.checkTableComData(rrs, rrs.getNodes()[0].getStatement(), null,
+			// null);//放到路由函数内，可能会减少一次SQL解析
 			return rrs;
 		}
 		// 检查schema是否含有拆分库
-		if (schema.isNoSharding()) {
+		if (schema.isNoSharding()) {// 未定义表
+			SQLStatement ast = SQLParserDelegate.parse(stmt, charset == null ? MySQLParser.DEFAULT_CHARSET : charset);
 			if (schema.isKeepSqlSchema()) {
-				SQLStatement ast = SQLParserDelegate.parse(stmt, charset == null ? MySQLParser.DEFAULT_CHARSET
-						: charset);
 				PartitionKeyVisitor visitor = new PartitionKeyVisitor(schema);
 				visitor.setTrimSchema(schema.getName());
 				ast.accept(visitor);
@@ -120,9 +147,7 @@ public final class ServerRouter {
 					stmt = genSQL(ast, stmt);
 				}
 			}
-			RouteResultsetNode[] nodes = new RouteResultsetNode[1];
-			nodes[0] = new RouteResultsetNode(schema.getDataNode(), stmt, schema, null, type);
-			rrs.setNodes(nodes);
+			rrs.setNodes(getDefaultRRNode(schema, stmt, ast, info, type));
 			return rrs;
 		}
 
@@ -131,7 +156,6 @@ public final class ServerRouter {
 		PartitionKeyVisitor visitor = null;
 		MultiNodeComDataExecutor comPlugn = info.getComPlugn();
 		// 利用SQL解析
-
 		if (comPlugn == null || comPlugn.getAst() != null) {
 			ast = SQLParserDelegate.parse(stmt, charset == null ? MySQLParser.DEFAULT_CHARSET : charset);
 			visitor = new PartitionKeyVisitor(schema);
@@ -147,9 +171,10 @@ public final class ServerRouter {
 			if (visitor.isSchemaTrimmed()) {
 				stmt = genSQL(ast, stmt);
 			}
-			RouteResultsetNode[] nodes = new RouteResultsetNode[1];
-			nodes[0] = new RouteResultsetNode(schema.getDataNode(), stmt, schema, null, type);
-			rrs.setNodes(nodes);
+			rrs.setNodes(getDefaultRRNode(schema, stmt, ast, info, type));
+//			RouteResultsetNode[] nodes = new RouteResultsetNode[1];
+//			nodes[0] = new RouteResultsetNode(schema.getDataNode(), stmt, schema, null, type);
+//			rrs.setNodes(nodes);
 			return rrs;
 		}
 
@@ -213,18 +238,33 @@ public final class ServerRouter {
 		}
 		if (rule == null) {
 			if (matchedTable.isRuleRequired()) {
-				throw new IllegalArgumentException("route rule for table " + matchedTable.getName() + " is required: "
-						+ stmt);
+				throw new IllegalArgumentException(
+						"route rule for table " + matchedTable.getName() + " is required: " + stmt);
 			}
 			String[] dataNodes = matchedTable.getDataNodes();
 			String sql = visitor.isSchemaTrimmed() ? genSQL(ast, stmt) : stmt;
-			RouteResultsetNode[] rn = new RouteResultsetNode[dataNodes.length];
-			for (int i = 0; i < dataNodes.length; ++i) {
-				rn[i] = new RouteResultsetNode(dataNodes[i], sql, schema, matchedTable, type);
+			if (matchedTable.isGlobal() && ast instanceof DMLSelectStatement) {
+				RouteResultsetNode[] rn = new RouteResultsetNode[1];
+				CobarConfig conf = CobarServer.getInstance().getConfig();
+				Map<String, MySQLDataNode> cNodes = conf.getDataNodes();
+				for (int i = 0; i < dataNodes.length; ++i) {
+					MySQLDataNode dn = cNodes.get(dataNodes[i]);
+					if (dn.isInitSuccess()) {
+						rn[i] = new RouteResultsetNode(dataNodes[i], sql, schema, matchedTable, type);
+						break;
+					}
+				}
+				rrs.setNodes(rn);
+				setGroupFlagAndLimit(rrs, visitor);
+			} else {
+				RouteResultsetNode[] rn = new RouteResultsetNode[dataNodes.length];
+				for (int i = 0; i < dataNodes.length; ++i) {
+					rn[i] = new RouteResultsetNode(dataNodes[i], sql, schema, matchedTable, type);
+				}
+				rrs.setNodes(rn);
+				setGroupFlagAndLimit(rrs, visitor);
+				info.checkTableComData(rrs, stmt, ast, visitor);
 			}
-			rrs.setNodes(rn);
-			setGroupFlagAndLimit(rrs, visitor);
-			info.checkTableComData(rrs, stmt, ast, visitor);
 			return rrs;
 		}
 
@@ -241,6 +281,7 @@ public final class ServerRouter {
 			String sql = visitor.isSchemaTrimmed() ? genSQL(ast, stmt) : stmt;
 			RouteResultsetNode[] rn = new RouteResultsetNode[1];
 			rn[0] = new RouteResultsetNode(dataNode, sql, schema, matchedTable, type);
+			setGroupFlagAndLimit(rrs, visitor);
 			rrs.setNodes(rn);
 		} else {
 			RouteResultsetNode[] rn = new RouteResultsetNode[dnMap.size()];
@@ -417,7 +458,8 @@ public final class ServerRouter {
 			frontConn.checkTableComData(rrs, outputSql, ast, visitor);
 		}
 
-		private static Set<String> calcHintDataNodes(RuleConfig rule, String[] cols, Object[][] vals, String[] dataNodes) {
+		private static Set<String> calcHintDataNodes(RuleConfig rule, String[] cols, Object[][] vals,
+				String[] dataNodes) {
 			Set<String> destDataNodes = new HashSet<String>(2, 1);
 			Map<String, Object> parameter = new HashMap<String, Object>(cols.length, 1);
 			for (Object[] val : vals) {
@@ -760,8 +802,8 @@ public final class ServerRouter {
 			dispatchWhereBasedStmt(rn, stmt, ruleColumns, dataNodeMap, matchedTable, originalSQL, visitor);
 			return;
 		}
-		Map<String, Map<Object, Set<Pair<Expression, ASTNode>>>> colsIndex = visitor.getColumnIndex(stmt.getTable()
-				.getIdTextUpUnescape());
+		Map<String, Map<Object, Set<Pair<Expression, ASTNode>>>> colsIndex = visitor
+				.getColumnIndex(stmt.getTable().getIdTextUpUnescape());
 		if (colsIndex == null || colsIndex.isEmpty()) {
 			throw new IllegalArgumentException("columns index is empty: " + originalSQL);
 		}
@@ -783,8 +825,8 @@ public final class ServerRouter {
 					tupleExprs = (Set<Pair<Expression, ASTNode>>) CollectionUtil.intersectSet(tupleExprs, set);
 				}
 				if (tupleExprs == null || tupleExprs.isEmpty()) {
-					throw new IllegalArgumentException("route: empty expression list for insertReplace stmt: "
-							+ originalSQL);
+					throw new IllegalArgumentException(
+							"route: empty expression list for insertReplace stmt: " + originalSQL);
 				}
 				for (Pair<Expression, ASTNode> p : tupleExprs) {
 					if (p.getValue() == stmt && p.getKey() instanceof RowExpression) {

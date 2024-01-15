@@ -125,10 +125,10 @@ public final class MultiNodeExecutor extends NodeExecutor {
 	/**
 	 * 多数据节点执行
 	 * 
-	 * @param nodes
-	 *            never null
+	 * @param nodes never null
 	 */
-	public void execute(RouteResultsetNode[] nodes, final boolean autocommit, final BlockingSession ss, final int flag) {
+	public void execute(RouteResultsetNode[] nodes, final boolean autocommit, final BlockingSession ss,
+			final int flag) {
 		// 初始化
 		final ReentrantLock lock = this.lock;
 		lock.lock();
@@ -162,7 +162,6 @@ public final class MultiNodeExecutor extends NodeExecutor {
 			}
 		}
 		okMessage.setLength(0);
-		;
 		ThreadPoolExecutor exec = ss.getSource().getProcessor().getExecutor();
 		for (final RouteResultsetNode rrn : nodes) {
 			final Channel c = target.get(rrn);
@@ -190,8 +189,9 @@ public final class MultiNodeExecutor extends NodeExecutor {
 		CobarConfig conf = CobarServer.getInstance().getConfig();
 		final MySQLDataNode dn = conf.getDataNodes().get(rrn.getName());
 		if (dn == null) {
-			handleFailure(ss, rrn, new SimpleErrInfo(new UnknownDataNodeException("Unknown dataNode '" + rrn.getName()
-					+ "'"), ErrorCode.ER_BAD_DB_ERROR, sc, rrn));
+			handleFailure(ss, rrn,
+					new SimpleErrInfo(new UnknownDataNodeException("Unknown dataNode '" + rrn.getName() + "'"),
+							ErrorCode.ER_BAD_DB_ERROR, sc, rrn));
 			return;
 		}
 
@@ -387,8 +387,8 @@ public final class MultiNodeExecutor extends NodeExecutor {
 					if (c != null) {
 						if (isFail.get() || source.isClosed()) {
 							/**
-							 * this {@link Channel} might be closed by other thread in this condition, so that do not
-							 * release this channel
+							 * this {@link Channel} might be closed by other thread in this condition, so
+							 * that do not release this channel
 							 */
 							c.close();
 						} else {
@@ -445,8 +445,7 @@ public final class MultiNodeExecutor extends NodeExecutor {
 	}
 
 	/**
-	 * @throws nothing
-	 *             never throws any exception
+	 * @throws nothing never throws any exception
 	 */
 	public void handleSuccessEOF(BlockingSession ss, BinaryPacket bin) {
 		if (decrementCountAndIsZero()) {
@@ -469,8 +468,7 @@ public final class MultiNodeExecutor extends NodeExecutor {
 	}
 
 	/**
-	 * @throws nothing
-	 *             never throws any exception
+	 * @throws nothing never throws any exception
 	 */
 	public void handleSuccessOK(BlockingSession ss, RouteResultsetNode rrn, boolean autocommit, OkPacket ok) {
 		if (ok.message != null && ok.message.length > 0) {
@@ -535,8 +533,7 @@ public final class MultiNodeExecutor extends NodeExecutor {
 	/**
 	 * 通知，执行异常
 	 * 
-	 * @throws nothing
-	 *             never throws any exception
+	 * @throws nothing never throws any exception
 	 */
 	void notifyFailure(BlockingSession ss) {
 		try {
