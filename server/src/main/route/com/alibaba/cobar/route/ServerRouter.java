@@ -191,6 +191,7 @@ public final class ServerRouter {
 		// 匹配规则
 		TableConfig matchedTable = null;
 		RuleConfig rule = null;
+		TableRuleConfig tbrule = null;
 		Map<String, List<Object>> columnValues = null;
 		Map<String, Map<String, List<Object>>> astExt = visitor.getColumnValue();
 		// Map<String, TableConfig> tables = schema.getTables();
@@ -203,10 +204,12 @@ public final class ServerRouter {
 			if (matchedTable == null) {
 				matchedTable = tc;
 			}
+			TableRuleConfig tr = tc.getRule();
+			if (tbrule == null)
+				tbrule = tr;
 			if (col2Val == null || col2Val.isEmpty()) {
 				continue;
 			}
-			TableRuleConfig tr = tc.getRule();
 			if (tr != null) {
 				for (RuleConfig rc : tr.getRules()) {
 					boolean match = true;
@@ -243,7 +246,7 @@ public final class ServerRouter {
 			}
 			String[] dataNodes = matchedTable.getDataNodes();
 			String sql = visitor.isSchemaTrimmed() ? genSQL(ast, stmt) : stmt;
-			if (matchedTable.isGlobal() && ast instanceof DMLSelectStatement) {
+			if (tbrule == null && matchedTable.isGlobal() && ast instanceof DMLSelectStatement) {
 				RouteResultsetNode[] rn = new RouteResultsetNode[1];
 				CobarConfig conf = CobarServer.getInstance().getConfig();
 				Map<String, MySQLDataNode> cNodes = conf.getDataNodes();

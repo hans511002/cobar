@@ -217,6 +217,8 @@ public class XMLSchemaLoader implements SchemaLoader {
 			if (tableElement.hasAttribute("global") && tableRule == null) {
 				isGlobal = Boolean.parseBoolean(tableElement.getAttribute("global").trim());
 			}
+			if (tableRule != null)
+				isGlobal = false;
 			String[] tableNames = SplitUtil.split(name, ',', true);
 			for (String tableName : tableNames) {
 				TableConfig table = new TableConfig(tableName, dataNode, tableRule, ruleRequired, groupType, comJoin,
